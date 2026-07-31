@@ -37,11 +37,35 @@ variants with content-hashed filenames. Files in `public/` are served untouched.
 
 ## Deploy
 
-> [!WARNING]
-> There is **no** `.github/workflows/deploy.yml` in this repo yet, so nothing
-> deploys automatically. Add a workflow using `withastro/action`, then set
-> **Settings → Pages → Source** to **GitHub Actions**.
+`.github/workflows/deploy.yml` builds and publishes to GitHub Pages on every
+push to `main`. Pull requests are built but never published, so a broken build
+cannot reach the live site.
 
-Note that `site` in `astro.config.mjs` and the `Sitemap:` line in
-`public/robots.txt` both hardcode `https://crojasaragonez.github.io` — update
-both when moving to a custom domain.
+### One-time setup
+
+> [!IMPORTANT]
+> **The repository must be named `crojasaragonez.github.io`.** GitHub Pages
+> serves any other repository under `/<repo-name>/`, but `astro.config.mjs`
+> declares the site at the root — so under a different name every link, asset
+> and canonical URL would 404.
+
+1. **Settings → General → Repository name** → `crojasaragonez.github.io`
+2. **Settings → Pages → Source** → **GitHub Actions**
+3. Point your local clone at the new name (GitHub redirects the old URL, but
+   don't depend on it):
+
+   ```bash
+   git remote set-url origin git@github.com:crojasaragonez/crojasaragonez.github.io.git
+   ```
+
+### Changing the URL later
+
+`site` in `astro.config.mjs` and the `Sitemap:` line in `public/robots.txt` both
+hardcode `https://crojasaragonez.github.io`. To move to a custom domain, update
+both and add `public/CNAME` containing the bare domain.
+
+> [!CAUTION]
+> Serving from a sub-path (setting `base` in `astro.config.mjs`) needs code
+> changes first. Components build links as `` `${base}about/` ``, and Astro's
+> `BASE_URL` has **no** trailing slash once `base` is set — producing
+> `/personal_websiteabout/`. Normalise `BASE_URL` everywhere before setting it.
