@@ -1,6 +1,6 @@
 # Carlos Luis Rojas Aragonés — Personal Website
 
-Static personal brand site built with [Astro](https://astro.build). Configured for GitHub Pages at `https://crojasaragonez.github.io/website/` when you publish the repo.
+Static personal brand site built with [Astro](https://astro.build). Configured to serve from `/` (e.g. `https://crojasaragonez.github.io/` or a custom domain).
 
 ## Develop
 
@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Open the URL Astro prints (paths use the `/website/` base).
+Open the URL Astro prints (root `/`).
 
 ## Build
 
