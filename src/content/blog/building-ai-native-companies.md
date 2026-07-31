@@ -1,6 +1,6 @@
 ---
 title: Building AI-native companies
-description: Why treating AI as a bolt-on feature fails — and what it means to design product, process, and organization around intelligence from day one.
+description: Why treating AI as a bolt-on feature fails, and what it means to design product, process, and organization around intelligence from day one.
 pubDate: 2026-07-31
 ---
 
@@ -10,7 +10,7 @@ An AI-native company starts from a different question. Not “Where can we add a
 
 ## Product first, model second
 
-At Subaxa, we build proptech around judicial real estate auctions. The product only works if people can trust the signal in messy, high-stakes data. That forces AI into the core loop — sourcing, structuring, ranking, explaining — rather than a side panel that looks modern in a pitch deck.
+At Subaxa, we build proptech around judicial real estate auctions. The product only works if people can trust the signal in messy, high-stakes data. That forces AI into the core loop (sourcing, structuring, ranking, explaining) rather than a side panel that looks modern in a pitch deck.
 
 The technical bar is real: retrieval quality, evaluation, human oversight, and cloud foundations that can operate in production. The organizational bar is higher. Engineers, product, and operators have to share a vocabulary for what “good” means when a model is involved.
 
@@ -24,4 +24,4 @@ If you lead engineering or found a company, AI-native work changes how you hire 
 
 I have spent nearly two decades scaling delivery organizations and technical strategy across the Americas. The pattern that keeps repeating is simple: technology creates leverage only when the organization is designed to absorb it.
 
-AI is no different. The companies that win will not be the ones with the flashiest model access. They will be the ones who rebuild their operating system around it — deliberately, measurably, and in public when it helps the craft.
+AI is no different. The companies that win will not be the ones with the flashiest model access. They will be the ones who rebuild their operating system around it, deliberately, measurably, and in public when it helps the craft.

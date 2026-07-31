@@ -1,4 +1,4 @@
-# Carlos Luis Rojas Aragonés — Personal Website
+# Carlos Luis Rojas Aragonés Personal Website
 
 Static personal brand site built with [Astro](https://astro.build). Configured to serve from `/` (e.g. `https://crojasaragonez.github.io/` or a custom domain).
 
