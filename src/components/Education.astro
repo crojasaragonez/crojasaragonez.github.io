@@ -2,19 +2,6 @@
 import { site } from '../data/site';
 
 const base = import.meta.env.BASE_URL;
-
-const mitPhotos = [
-  {
-    src: 'mit_2.jpeg',
-    alt: 'Carlos Rojas at Killian Court in front of the MIT Great Dome',
-    caption: 'On campus at MIT, Killian Court.',
-  },
-  {
-    src: 'mit_1.jpeg',
-    alt: 'MIT Professional Education badge for Carlos Luis Rojas Aragonés, CTO at Golabs',
-    caption: 'MIT Professional Education, Chief Technology Officer program.',
-  },
-];
 ---
 
 <section class="section" id="education">
@@ -28,21 +15,39 @@ const mitPhotos = [
       </p>
     </div>
 
-    <div class="mit-gallery reveal">
-      {
-        mitPhotos.map((photo) => (
-          <figure>
-            <img
-              src={`${base}${photo.src}`}
-              alt={photo.alt}
-              width="800"
-              height="1066"
-              loading="lazy"
-            />
-            <figcaption>{photo.caption}</figcaption>
-          </figure>
-        ))
-      }
+    <div class="mit-mosaic reveal" aria-label="Photos from MIT">
+      <figure class="shot shot-campus">
+        <img
+          src={`${base}mit_1.jpeg`}
+          alt="Carlos Rojas at Killian Court in front of the MIT Great Dome"
+          width="800"
+          height="1066"
+          loading="lazy"
+        />
+        <figcaption>Killian Court</figcaption>
+      </figure>
+
+      <figure class="shot shot-badge">
+        <img
+          src={`${base}mit_2.jpeg`}
+          alt="MIT Professional Education badge for Carlos Luis Rojas Aragonés, CTO at Golabs"
+          width="800"
+          height="1066"
+          loading="lazy"
+        />
+        <figcaption>CTO program badge</figcaption>
+      </figure>
+
+      <figure class="shot shot-hack">
+        <img
+          src={`${base}mit_3.jpeg`}
+          alt="Friends posing with the MIT Fire Hydrant Water Fountain hack exhibit"
+          width="1600"
+          height="1200"
+          loading="lazy"
+        />
+        <figcaption>MIT fire hose</figcaption>
+      </figure>
     </div>
 
     <ul class="list reveal">
@@ -63,26 +68,70 @@ const mitPhotos = [
 </section>
 
 <style>
-  .mit-gallery {
+  .mit-mosaic {
     display: grid;
-    gap: 1.5rem;
-    margin-top: 2.5rem;
+    gap: 0.85rem;
+    margin-top: 2.75rem;
   }
 
-  .mit-gallery figure {
+  .shot {
+    position: relative;
     margin: 0;
-  }
-
-  .mit-gallery img {
-    width: 100%;
-    height: auto;
+    overflow: hidden;
     border: 1px solid var(--border);
+    background: var(--bg-elevated);
   }
 
-  .mit-gallery figcaption {
-    margin-top: 0.7rem;
-    color: var(--text-muted);
-    font-size: 0.9rem;
+  .shot img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition:
+      transform 0.7s var(--ease),
+      filter 0.7s var(--ease);
+  }
+
+  .shot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 45%, rgba(8, 11, 18, 0.82) 100%);
+    pointer-events: none;
+    opacity: 0.9;
+    transition: opacity 0.4s var(--ease);
+  }
+
+  .shot figcaption {
+    position: absolute;
+    left: 0.9rem;
+    right: 0.9rem;
+    bottom: 0.8rem;
+    z-index: 1;
+    margin: 0;
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .shot:hover img {
+    transform: scale(1.04);
+    filter: saturate(1.08);
+  }
+
+  .shot:hover::after {
+    opacity: 0.7;
+  }
+
+  .shot-campus,
+  .shot-badge {
+    aspect-ratio: 4 / 5;
+  }
+
+  .shot-hack {
+    aspect-ratio: 16 / 10;
   }
 
   .list {
@@ -121,16 +170,52 @@ const mitPhotos = [
     max-width: 42rem;
   }
 
-  @media (min-width: 700px) {
-    .mit-gallery {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.75rem;
+  @media (min-width: 800px) {
+    .mit-mosaic {
+      grid-template-columns: 0.9fr 1.2fr;
+      grid-template-rows: 14rem 16rem;
+      gap: 1rem;
     }
 
-    .list li {
-      grid-template-columns: 1fr auto;
-      align-items: start;
-      gap: 1.5rem;
+    .shot-campus {
+      grid-column: 1;
+      grid-row: 1 / -1;
+      aspect-ratio: auto;
+    }
+
+    .shot-badge {
+      grid-column: 2;
+      grid-row: 1;
+      aspect-ratio: auto;
+    }
+
+    .shot-hack {
+      grid-column: 2;
+      grid-row: 2;
+      aspect-ratio: auto;
+    }
+
+    .shot-campus img {
+      object-position: center 28%;
+    }
+
+    .shot-badge img {
+      object-position: center 38%;
+    }
+
+    .shot-hack img {
+      object-position: center 52%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .shot img,
+    .shot::after {
+      transition: none;
+    }
+
+    .shot:hover img {
+      transform: none;
     }
   }
 </style>
