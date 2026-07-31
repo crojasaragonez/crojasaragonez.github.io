@@ -1,0 +1,57 @@
+---
+import { site } from '../data/site';
+---
+
+<section class="section" id="expertise">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Expertise</p>
+      <h2 class="section-title">Where I create leverage</h2>
+      <p class="section-lead">
+        Strategy, systems, and teams — the intersection where technology executives earn trust.
+      </p>
+    </div>
+    <ul class="grid reveal">
+      {
+        site.expertise.map((item) => (
+          <li>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .grid {
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 2rem 1.75rem;
+  }
+
+  .grid li {
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-strong);
+  }
+
+  .grid h3 {
+    margin-bottom: 0.55rem;
+    font-size: 1.2rem;
+    color: var(--text);
+  }
+
+  .grid p {
+    margin: 0;
+    max-width: 34rem;
+  }
+
+  @media (min-width: 800px) {
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>

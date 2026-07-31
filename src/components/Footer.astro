@@ -1,0 +1,66 @@
+---
+import { site } from '../data/site';
+
+const year = new Date().getFullYear();
+const base = import.meta.env.BASE_URL;
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p class="footer-brand">{site.name}</p>
+    <div class="footer-links">
+      <a href={site.socials.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href={site.socials.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href={`${base}blog/`}>Blog</a>
+      <a href={`${base}resume.pdf`}>Résumé</a>
+    </div>
+    <p class="footer-copy">© {year}</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--border);
+    padding-block: 2.5rem;
+  }
+
+  .footer-inner {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .footer-brand {
+    margin: 0;
+    color: var(--text);
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.25rem;
+  }
+
+  .footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+
+  .footer-links a:hover {
+    color: var(--accent);
+  }
+
+  .footer-copy {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 720px) {
+    .footer-inner {
+      grid-template-columns: 1fr auto auto;
+      align-items: center;
+    }
+  }
+</style>

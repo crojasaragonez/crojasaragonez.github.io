@@ -1,0 +1,94 @@
+---
+import { site } from '../data/site';
+
+const base = import.meta.env.BASE_URL;
+const links = [
+  { href: `${base}#about`, label: 'About' },
+  { href: `${base}#expertise`, label: 'Expertise' },
+  { href: `${base}#speaking`, label: 'Speaking' },
+  { href: `${base}blog/`, label: 'Blog' },
+  { href: `${base}#contact`, label: 'Contact' },
+];
+---
+
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href={base}>{site.name.split(' ').slice(0, 2).join(' ')}</a>
+    <nav class="nav" aria-label="Primary">
+      {
+        links.map((link) => (
+          <a href={link.href}>{link.label}</a>
+        ))
+      }
+    </nav>
+    <a class="header-cta btn btn-secondary" href={site.socials.linkedin} target="_blank" rel="noopener noreferrer">
+      LinkedIn
+    </a>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    backdrop-filter: blur(14px);
+    background: rgba(7, 12, 9, 0.78);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: 4rem;
+  }
+
+  .brand {
+    flex: 0 0 auto;
+    color: var(--text);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+
+  .brand:hover {
+    color: var(--accent);
+  }
+
+  .nav {
+    display: none;
+    flex: 1;
+    justify-content: center;
+    gap: 1.25rem;
+  }
+
+  .nav a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .nav a:hover {
+    color: var(--text);
+  }
+
+  .header-cta {
+    margin-left: auto;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.85rem;
+  }
+
+  @media (min-width: 840px) {
+    .nav {
+      display: flex;
+    }
+
+    .header-cta {
+      margin-left: 0;
+    }
+  }
+</style>

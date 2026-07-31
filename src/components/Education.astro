@@ -1,0 +1,70 @@
+---
+import { site } from '../data/site';
+---
+
+<section class="section" id="education">
+  <div class="container reveal">
+    <p class="section-label">Education</p>
+    <h2 class="section-title">Credentials & teaching</h2>
+    <ul class="list">
+      {
+        site.education.map((item) => (
+          <li>
+            <div>
+              <h3>{item.school}</h3>
+              <p>{item.program}</p>
+            </div>
+            <span class="year">{item.year}</span>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="teaching">{site.teaching}</p>
+  </div>
+</section>
+
+<style>
+  .list {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .list li {
+    display: grid;
+    gap: 0.35rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h3 {
+    margin: 0 0 0.3rem;
+    font-size: 1.15rem;
+  }
+
+  .list p {
+    margin: 0;
+  }
+
+  .year {
+    color: var(--accent);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .teaching {
+    margin-top: 1.75rem;
+    max-width: 42rem;
+  }
+
+  @media (min-width: 700px) {
+    .list li {
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 1.5rem;
+    }
+  }
+</style>

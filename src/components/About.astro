@@ -1,0 +1,26 @@
+---
+import { site } from '../data/site';
+---
+
+<section class="section" id="about">
+  <div class="container reveal">
+    <p class="section-label">About</p>
+    <h2 class="section-title">{site.about.lead}</h2>
+    <div class="copy">
+      {site.about.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .copy {
+    display: grid;
+    gap: 1rem;
+    max-width: 46rem;
+    margin-top: 1.5rem;
+  }
+
+  .copy p {
+    font-size: 1.05rem;
+  }
+</style>

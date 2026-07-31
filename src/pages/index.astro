@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Impact from '../components/Impact.astro';
+import About from '../components/About.astro';
+import Expertise from '../components/Expertise.astro';
+import Speaking from '../components/Speaking.astro';
+import Education from '../components/Education.astro';
+import Testimonials from '../components/Testimonials.astro';
+import BlogTeaser from '../components/BlogTeaser.astro';
+import Contact from '../components/Contact.astro';
+
+const talks = (await getCollection('talks')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const testimonials = (await getCollection('testimonials')).sort(
+  (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
+);
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout>
+  <Hero />
+  <Impact />
+  <About />
+  <Expertise />
+  <Speaking talks={talks} />
+  <Education />
+  <Testimonials testimonials={testimonials} />
+  <BlogTeaser posts={posts} />
+  <Contact />
+</BaseLayout>

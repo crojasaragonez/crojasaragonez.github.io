@@ -1,0 +1,93 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  talks: CollectionEntry<'talks'>[];
+}
+
+const { talks } = Astro.props;
+
+const formatter = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short' });
+---
+
+<section class="section" id="speaking">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Speaking</p>
+      <h2 class="section-title">Talks for builders and leaders</h2>
+      <p class="section-lead">
+        Selected technology and leadership talks. Invite me for AI strategy, nearshore delivery, and scaling engineering organizations.
+      </p>
+    </div>
+    <ul class="talks reveal">
+      {
+        talks.map((talk) => (
+          <li>
+            <div class="meta">
+              <time datetime={talk.data.date.toISOString()}>{formatter.format(talk.data.date)}</time>
+              {talk.data.location && <span>{talk.data.location}</span>}
+            </div>
+            <h3>
+              {talk.data.url ? (
+                <a href={talk.data.url} target="_blank" rel="noopener noreferrer">
+                  {talk.data.title}
+                </a>
+              ) : (
+                talk.data.title
+              )}
+            </h3>
+            <p>{talk.data.event}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .talks {
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0;
+  }
+
+  .talks li {
+    padding: 1.35rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .talks li:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-bottom: 0.4rem;
+    color: var(--accent-soft);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.2rem;
+  }
+
+  h3 a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  h3 a:hover {
+    color: var(--accent);
+  }
+
+  .talks p {
+    margin: 0;
+  }
+</style>
