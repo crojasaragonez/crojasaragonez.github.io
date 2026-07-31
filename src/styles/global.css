@@ -1,3 +1,5 @@
+@import '@fontsource-variable/geist';
+
 :root {
   --bg: #0b0f19;
   --bg-elevated: #151b2d;
@@ -13,8 +15,8 @@
   --border-strong: #273244;
   --focus: #35d6ff;
   --on-primary: #0b0f19;
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-display: 'Geist Variable', 'Geist', sans-serif;
+  --font-body: 'Geist Variable', 'Geist', sans-serif;
   --max: 68rem;
   --pad: clamp(1.25rem, 4vw, 2rem);
   --section-gap: clamp(4.5rem, 10vw, 7.5rem);
