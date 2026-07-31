@@ -1,0 +1,288 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+
+const talks = (await getCollection('talks')).sort(
+  (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
+);
+
+const featured = talks.filter((talk) => talk.data.featured);
+
+const byTopic = talks.reduce<Record<string, typeof talks>>((acc, talk) => {
+  const topic = talk.data.topic;
+  if (!acc[topic]) acc[topic] = [];
+  acc[topic].push(talk);
+  return acc;
+}, {});
+
+const topicOrder = Object.keys(byTopic).sort((a, b) => {
+  const aMin = Math.min(...byTopic[a].map((t) => t.data.order ?? 0));
+  const bMin = Math.min(...byTopic[b].map((t) => t.data.order ?? 0));
+  return aMin - bMin;
+});
+
+const presentationsRepo = 'https://github.com/crojasaragonez/presentations';
+---
+
+<BaseLayout
+  title="Speaking"
+  description={`Talks and workshops by ${site.name} — AI agents, cloud architecture, APIs, and engineering leadership.`}
+>
+  <section class="section intro">
+    <div class="container reveal">
+      <p class="section-label">Speaking</p>
+      <h1 class="page-title">Talks for builders and leaders</h1>
+      <div class="copy">
+        <p>
+          Tech talks and workshops from across my career — AI agents, cloud architecture, APIs, web platforms,
+          and engineering craft — for teams, leadership forums, and developer communities.
+        </p>
+        <p>
+          Slide decks, demos, and labs are open in my
+          <a href={presentationsRepo} target="_blank" rel="noopener noreferrer">presentations repository</a>.
+          Invite me when you want practical demos, clear frameworks, and lessons from shipping and leading
+          across the Americas.
+        </p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href={site.socials.linkedin} target="_blank" rel="noopener noreferrer">
+          Invite via LinkedIn
+        </a>
+        <a class="btn btn-secondary" href={presentationsRepo} target="_blank" rel="noopener noreferrer">
+          Presentations repo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="featured">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Featured</p>
+        <h2 class="section-title">Highlighted talks</h2>
+        <p class="section-lead">
+          Sessions I recommend for AI strategy, platform architecture, and modern web delivery.
+        </p>
+      </div>
+      <ul class="talks featured-talks reveal">
+        {
+          featured.map((talk) => (
+            <li>
+              <div class="meta">
+                <span class="topic">{talk.data.topic}</span>
+                <span>{talk.data.event}</span>
+              </div>
+              <h3>
+                {talk.data.url ? (
+                  <a href={talk.data.url} target="_blank" rel="noopener noreferrer">
+                    {talk.data.title}
+                  </a>
+                ) : (
+                  talk.data.title
+                )}
+              </h3>
+              {talk.data.description && <p>{talk.data.description}</p>}
+              {talk.data.url && (
+                <a class="materials" href={talk.data.url} target="_blank" rel="noopener noreferrer">
+                  View materials
+                </a>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="catalog">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Catalog</p>
+        <h2 class="section-title">All talks & workshops</h2>
+        <p class="section-lead">Full list grouped by topic, with links to slide decks and labs when available.</p>
+      </div>
+      {
+        topicOrder.map((topic) => (
+          <div class="topic-group reveal">
+            <h3 class="topic-heading">{topic}</h3>
+            <ul class="talks">
+              {byTopic[topic].map((talk) => (
+                <li>
+                  <div class="meta">
+                    <span class="badge">{talk.data.event}</span>
+                  </div>
+                  <h4>
+                    {talk.data.url ? (
+                      <a href={talk.data.url} target="_blank" rel="noopener noreferrer">
+                        {talk.data.title}
+                      </a>
+                    ) : (
+                      talk.data.title
+                    )}
+                  </h4>
+                  {talk.data.description && <p>{talk.data.description}</p>}
+                  {talk.data.url && (
+                    <a class="materials" href={talk.data.url} target="_blank" rel="noopener noreferrer">
+                      View materials
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container reveal">
+      <h2 class="section-title">Invite me to speak</h2>
+      <p class="section-lead">
+        For conferences, internal tech talks, or workshops — reach out on LinkedIn with the audience, format, and topic.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href={site.socials.linkedin} target="_blank" rel="noopener noreferrer">
+          Message on LinkedIn
+        </a>
+        <a class="btn btn-secondary" href={presentationsRepo} target="_blank" rel="noopener noreferrer">
+          Browse materials
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .intro {
+    padding-top: clamp(3rem, 8vw, 5rem);
+  }
+
+  .page-title {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    max-width: 16ch;
+    margin-bottom: 1.75rem;
+  }
+
+  .copy {
+    display: grid;
+    gap: 1rem;
+    max-width: 46rem;
+  }
+
+  .copy p {
+    font-size: 1.05rem;
+  }
+
+  .copy a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .copy a:hover {
+    color: var(--accent-soft);
+  }
+
+  .btn-row {
+    margin-top: 1.75rem;
+  }
+
+  .talks {
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0;
+  }
+
+  .talks li {
+    padding: 1.35rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .talks li:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-bottom: 0.4rem;
+    color: var(--accent-soft);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .topic,
+  .badge {
+    color: var(--secondary);
+  }
+
+  .featured-talks h3,
+  .topic-group h4 {
+    margin: 0 0 0.35rem;
+    font-size: 1.2rem;
+  }
+
+  .featured-talks h3 a,
+  .topic-group h4 a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .featured-talks h3 a:hover,
+  .topic-group h4 a:hover {
+    color: var(--accent);
+  }
+
+  .talks p {
+    margin: 0;
+    max-width: 46rem;
+  }
+
+  .materials {
+    display: inline-block;
+    margin-top: 0.65rem;
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .materials:hover {
+    color: var(--accent-soft);
+  }
+
+  .topic-group {
+    margin-top: 2.75rem;
+  }
+
+  .topic-heading {
+    margin: 0;
+    font-size: 1.15rem;
+    color: var(--secondary);
+  }
+
+  .topic-group .talks {
+    margin-top: 1rem;
+  }
+
+  .cta {
+    padding-bottom: clamp(5rem, 12vw, 8rem);
+  }
+
+  @media (min-width: 800px) {
+    .featured-talks {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 2rem;
+    }
+
+    .featured-talks li:nth-child(1),
+    .featured-talks li:nth-child(2) {
+      border-top: 1px solid var(--border);
+    }
+  }
+</style>

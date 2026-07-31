@@ -2,9 +2,9 @@ export const site = {
   name: 'Carlos Luis Rojas Aragonés',
   title: 'Technology Entrepreneur',
   tagline:
-    'Co-Founder & Chief AI Officer at Subaxa. Building AI-native products and leading engineering organizations across the Americas.',
+    'Co-Founder & Chief AI Officer at Subaxa. Co-founder and board member at Golabs. Building AI-native products across the Americas.',
   description:
-    'Technology entrepreneur and executive with 18+ years leading software organizations, AI initiatives, and nearshore delivery for clients across the United States and the Americas.',
+    'Technology entrepreneur and executive with 18+ years leading software organizations, AI initiatives, and nearshore delivery — co-founder of Golabs and Subaxa.',
   location: 'San Carlos, Costa Rica',
   socials: {
     linkedin: 'https://www.linkedin.com/in/crojasaragonez',
@@ -20,13 +20,99 @@ export const site = {
   about: {
     lead: 'I build technology organizations and AI-native products that ship.',
     summary:
-      'From shipping product as an engineer to scaling 100+ person organizations and founding an AI-native company — a trajectory across delivery, leadership, and entrepreneurship in the Americas.',
+      'From shipping product as an engineer to co-founding Golabs, scaling it past 100 engineers, and founding Subaxa — a trajectory across delivery, leadership, and AI-native entrepreneurship.',
     paragraphs: [
-      'I started as an engineer shipping product under tight timelines, then spent years owning delivery for distributed teams serving clients in the United States and across the Americas. As CTO, I scaled an engineering organization from zero to more than 100 engineers, built leadership layers that outlast any single hire, and stood up an AI division that grew to roughly 30% of company revenue.',
-      'Today I am Co-Founder and Chief AI Officer at Subaxa, an AI-native proptech company transforming how people invest in judicial real estate auctions. We do not bolt AI onto an existing product — we design processes, decisions, and customer interactions around it from day one.',
+      'I started as an engineer shipping product under tight timelines, then co-founded Golabs in 2014. Over roughly twelve years as Delivery Manager and CTO, I helped grow a nearshore engineering company from a small founding team in San Carlos to 100+ engineers across Latin America — including an AI division that reached about 30% of company revenue. In 2023 I sold a majority stake; I remain on the Board of Directors.',
+      'Today I am Co-Founder and Chief AI Officer at Subaxa, an AI-native proptech company transforming how people invest in judicial real estate auctions in Costa Rica. It is the shift from delivering AI services for others to building an AI-native product company with my founding partners — processes, decisions, and customer interactions designed around intelligence from day one.',
       'I care about talent systems, clear technical strategy, and execution that founders and enterprise leaders can trust. I also teach, speak, and contribute to the open-source community when it sharpens the craft.',
     ],
   },
+  ventures: [
+    {
+      slug: 'golabs',
+      name: 'Golabs',
+      role: 'Co-Founder · Board of Directors',
+      period: '2014 – Present',
+      location: 'San Carlos & San José, Costa Rica · LATAM',
+      website: 'https://golabstech.com',
+      websiteLabel: 'golabstech.com',
+      tagline: 'Nearshore AI and engineering talent from Latin America.',
+      summary:
+        'The company I co-founded in 2014, grew for twelve years as Delivery Manager and CTO, and continue to serve as a board member after selling a majority stake in 2023.',
+      story: [
+        'Golabs started in San Carlos, Costa Rica, with a small founding team and a clear bet: build durable nearshore engineering capacity in LATAM for companies that need more than extra hands — they need accountable teams.',
+        'I spent the early years as Delivery Manager, establishing how we estimated, staffed, and shipped for clients. As CTO I scaled the technical organization from essentially zero to more than 100 engineers across Costa Rica, Mexico, Nicaragua, Colombia, Guatemala, Argentina, the United States, and other markets — with leadership layers designed to outlast any single hire.',
+        'We stood up an AI division that grew to roughly 30% of company revenue, pairing custom AI systems and nearshore delivery for enterprise and growth-stage clients. In 2023 I sold a majority of my shares. Today I serve on the Board of Directors, staying connected to the company I helped build.',
+      ],
+      focus: [
+        {
+          title: 'Nearshore AI & engineering',
+          description:
+            'Dedicated LATAM teams embedded with clients — AI engineers, data scientists, and full-stack talent in overlapping U.S. time zones.',
+        },
+        {
+          title: 'Custom AI systems',
+          description:
+            'From strategy to production: agents, ML models, orchestration, and the operating habits that keep initiatives from stalling as demos.',
+        },
+        {
+          title: 'AI fluency',
+          description:
+            'Organization-wide enablement so teams can work alongside AI with shared language, judgment, and delivery discipline.',
+        },
+      ],
+      milestones: [
+        { label: 'Founded', detail: '2014 · San Carlos, Costa Rica' },
+        { label: 'My roles', detail: 'Delivery Manager → CTO (~12 years)' },
+        { label: 'Scale', detail: '0 → 100+ engineers across LATAM' },
+        { label: 'AI division', detail: '~30% of company revenue' },
+        { label: 'Majority sale', detail: '2023' },
+        { label: 'Today', detail: 'Board of Directors' },
+      ],
+    },
+    {
+      slug: 'subaxa',
+      name: 'Subaxa',
+      role: 'Co-Founder & Chief AI Officer',
+      period: 'Present',
+      location: 'San Carlos, Costa Rica',
+      website: 'https://subaxa.com',
+      websiteLabel: 'subaxa.com',
+      tagline: 'AI-native proptech for judicial real estate auctions.',
+      summary:
+        'Where I moved from providing AI services to other companies to building an AI-native product company with my founding partners.',
+      story: [
+        'Subaxa is the company where the thesis became personal: stop only delivering AI capabilities for others, and build a product that cannot work without intelligence in the core loop.',
+        'We focus on judicial real estate auctions (remates) in Costa Rica — a market where opportunity is real and information is fragmented. Investors need a national map of auctions, legal risk signal they can trust, and human experts who stay with them through the remate.',
+        'As Co-Founder and Chief AI Officer, I lead how AI shapes product, process, and organization. Models help source, structure, score, and explain — alongside legal and investment specialists. The goal is not a chatbot bolted onto a listing site; it is an operating system for investing in remates with evidence instead of intuition.',
+      ],
+      focus: [
+        {
+          title: 'Opportunity map',
+          description:
+            'Nationwide visibility into remates — explore the market in one place instead of chasing scattered edictos.',
+        },
+        {
+          title: 'AI risk & value signal',
+          description:
+            'Models trained on the Costa Rican market to surface legal risk, estimated margins, and alerts before opportunities go wide.',
+        },
+        {
+          title: 'Human + AI accompaniment',
+          description:
+            'Legal and investment specialists paired with the platform so investors arrive at the remate with a plan, not a guess.',
+        },
+      ],
+      milestones: [
+        { label: 'Model', detail: 'AI-native product company' },
+        { label: 'Market', detail: 'Judicial remates · Costa Rica' },
+        { label: 'My role', detail: 'Co-Founder & Chief AI Officer' },
+        { label: 'Thesis', detail: 'Intelligence in the core loop, not a bolt-on' },
+        { label: 'Team', detail: 'Legal · investment · product · AI' },
+        { label: 'Base', detail: 'San Carlos, Alajuela' },
+      ],
+    },
+  ],
   experience: [
     {
       company: 'Subaxa',
@@ -34,16 +120,26 @@ export const site = {
       location: 'Costa Rica',
       period: 'Present',
       highlights: [
-        'Lead product and AI strategy for an AI-native proptech company focused on judicial real estate auctions.',
+        'Lead product and AI strategy for an AI-native proptech company focused on judicial real estate auctions in Costa Rica.',
         'Design processes, decisions, and customer interactions around artificial intelligence from day one — not as a bolt-on feature.',
-        'Build the technical and organizational foundations for an AI-first operating model.',
+        'Build the technical and organizational foundations for an AI-first operating model with founding partners.',
       ],
     },
     {
       company: 'Golabs',
-      role: 'Chief Technology Officer',
+      role: 'Board of Directors',
       location: 'LATAM',
-      period: '2019 – Present',
+      period: '2023 – Present',
+      highlights: [
+        'Serve on the board after selling a majority stake in 2023, staying involved in the company I co-founded.',
+        'Support strategic direction for a nearshore AI and engineering organization serving clients across the Americas.',
+      ],
+    },
+    {
+      company: 'Golabs',
+      role: 'Co-Founder & Chief Technology Officer',
+      location: 'LATAM',
+      period: '2019 – 2023',
       highlights: [
         'Created and led the AI division, achieving roughly 30% of total company revenue through AI services and solutions.',
         'Scaled the company from 0 to 100+ engineers across Latin America, supporting complex, high-impact projects for Fortune 500 clients.',
@@ -55,11 +151,11 @@ export const site = {
     },
     {
       company: 'Golabs',
-      role: 'Delivery Manager',
+      role: 'Co-Founder & Delivery Manager',
       location: 'Costa Rica',
       period: '2014 – 2019',
       highlights: [
-        'Led end-to-end delivery for multiple client engagements, establishing repeatable delivery processes across distributed teams.',
+        'Co-founded Golabs and led end-to-end delivery for multiple client engagements, establishing repeatable processes across distributed teams.',
         'Standardized delivery processes across projects, increasing consistency and reducing onboarding time for new team members.',
         'Partnered with sales and pre-sales teams to estimate effort, define delivery approaches, and support successful deal closures.',
         'Mentored technical leads and senior engineers, strengthening delivery ownership and decision-making at the team level.',

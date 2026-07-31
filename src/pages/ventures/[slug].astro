@@ -1,0 +1,233 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+
+export function getStaticPaths() {
+  return site.ventures.map((venture) => ({
+    params: { slug: venture.slug },
+    props: { venture },
+  }));
+}
+
+const { venture } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const others = site.ventures.filter((item) => item.slug !== venture.slug);
+---
+
+<BaseLayout
+  title={venture.name}
+  description={`${venture.name} — ${venture.tagline} Co-founded by ${site.name}.`}
+>
+  <section class="section intro">
+    <div class="container reveal">
+      <p class="section-label">
+        <a href={`${base}ventures/`}>Ventures</a>
+        <span aria-hidden="true"> / </span>
+        {venture.name}
+      </p>
+      <h1 class="page-title">{venture.name}</h1>
+      <p class="role">{venture.role}</p>
+      <div class="meta-row">
+        <span>{venture.period}</span>
+        <span>{venture.location}</span>
+      </div>
+      <p class="lead">{venture.tagline}</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href={venture.website} target="_blank" rel="noopener noreferrer">
+          Visit {venture.websiteLabel}
+        </a>
+        <a class="btn btn-secondary" href={`${base}ventures/`}>
+          All ventures
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="story">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Story</p>
+        <h2 class="section-title">My relationship with {venture.name}</h2>
+        <p class="section-lead">{venture.summary}</p>
+      </div>
+      <div class="copy reveal">
+        {venture.story.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="milestones">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">At a glance</p>
+        <h2 class="section-title">Key milestones</h2>
+      </div>
+      <ul class="milestones reveal">
+        {
+          venture.milestones.map((item) => (
+            <li>
+              <h3>{item.label}</h3>
+              <p>{item.detail}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="focus">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Focus</p>
+        <h2 class="section-title">What {venture.name} builds</h2>
+      </div>
+      <ul class="focus reveal">
+        {
+          venture.focus.map((item) => (
+            <li>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container reveal">
+      <h2 class="section-title">Explore further</h2>
+      <p class="section-lead">
+        Visit the company site, or continue with {others[0] ? others[0].name : 'my other ventures'} and the full trajectory.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href={venture.website} target="_blank" rel="noopener noreferrer">
+          {venture.websiteLabel}
+        </a>
+        {
+          others[0] && (
+            <a class="btn btn-secondary" href={`${base}ventures/${others[0].slug}/`}>
+              {others[0].name}
+            </a>
+          )
+        }
+        <a class="btn btn-secondary" href={`${base}about/`}>
+          About me
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .intro {
+    padding-top: clamp(3rem, 8vw, 5rem);
+  }
+
+  .section-label a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .section-label a:hover {
+    color: var(--accent);
+  }
+
+  .page-title {
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .role {
+    margin: 0 0 0.65rem;
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .lead {
+    margin: 0;
+    max-width: 40rem;
+    font-size: 1.15rem;
+    color: var(--text-muted);
+  }
+
+  .btn-row {
+    margin-top: 1.75rem;
+  }
+
+  .copy {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+    max-width: 46rem;
+  }
+
+  .copy p {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+
+  .milestones,
+  .focus {
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0;
+  }
+
+  .milestones li,
+  .focus li {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .milestones li:first-child,
+  .focus li:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .milestones h3,
+  .focus h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+  }
+
+  .milestones p,
+  .focus p {
+    margin: 0;
+    max-width: 40rem;
+    color: var(--text-muted);
+  }
+
+  .cta {
+    padding-bottom: clamp(5rem, 12vw, 8rem);
+  }
+
+  @media (min-width: 800px) {
+    .milestones,
+    .focus {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 2rem;
+    }
+
+    .milestones li:nth-child(1),
+    .milestones li:nth-child(2),
+    .focus li:nth-child(1),
+    .focus li:nth-child(2) {
+      border-top: 1px solid var(--border);
+    }
+  }
+</style>
