@@ -7,11 +7,43 @@ import { site } from '../data/site';
 interface Props {
   title?: string;
   description?: string;
+  /** Path relative to the site root, e.g. "og.jpg". Falls back to the site-wide card. */
+  image?: string;
 }
 
-const { title, description = site.description } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const { title, description = site.description, image = 'og.jpg' } = Astro.props;
 const pageTitle = title ? `${title} · ${site.name}` : `${site.name} · ${site.title}`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(`${base}${image}`, Astro.site);
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.name,
+  jobTitle: 'Co-Founder & Chief AI Officer',
+  description: site.description,
+  url: new URL(base, Astro.site).href,
+  image: ogImage.href,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'San Carlos',
+    addressRegion: 'Alajuela',
+    addressCountry: 'CR',
+  },
+  sameAs: [site.socials.linkedin, site.socials.github],
+  worksFor: site.ventures.map((venture) => ({
+    '@type': 'Organization',
+    name: venture.name,
+    url: venture.website,
+  })),
+  alumniOf: site.education.map((entry) => ({
+    '@type': 'EducationalOrganization',
+    name: entry.school,
+  })),
+  knowsAbout: site.expertise.map((entry) => entry.title),
+  knowsLanguage: site.skills.languages.map((language) => language.name),
+};
 ---
 
 <!doctype html>
@@ -22,19 +54,70 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonical} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${site.name} — ${site.title}`} />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
-    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="icon" href={`${base}favicon.ico`} sizes="32x32" />
+    <link rel="sitemap" type="application/xml" href={`${base}sitemap-index.xml`} />
     <title>{pageTitle}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} is:inline />
+    <noscript>
+      <style>
+        /* Scroll-reveal and the nav disclosure both need JS; without it, show everything. */
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+
+        .nav-toggle {
+          display: none !important;
+        }
+
+        @media (max-width: 839px) {
+          .nav {
+            position: static !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            transform: none !important;
+            display: flex !important;
+            flex-wrap: wrap;
+            gap: 0 1rem;
+            width: 100%;
+            padding: 0 0 0.75rem !important;
+            background: none !important;
+            border-bottom: 0 !important;
+          }
+
+          .nav a {
+            padding: 0.35rem 0 !important;
+            border-bottom: 0 !important;
+            font-size: 0.9rem !important;
+          }
+
+          .header-inner {
+            flex-wrap: wrap;
+            padding-top: 0.75rem;
+          }
+        }
+      </style>
+    </noscript>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <Header />
-    <main>
+    <main id="main">
       <slot />
     </main>
     <Footer />

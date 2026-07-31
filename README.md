@@ -24,9 +24,24 @@ npm run preview
 - About page: `src/pages/about.astro`
 - Blog posts: `src/content/blog/`
 - Talks: `src/content/talks/`
-- Testimonials: `src/content/testimonials/`
-- Résumé PDF: `public/resume.pdf`
+- Images (processed by `astro:assets`): `src/assets/`
+- Static files served as-is: `public/` (`resume.pdf`, `og.jpg`, favicons, `robots.txt`)
 
-## Deploy (manual)
+Images must live in `src/assets/` and be imported, so Astro can emit AVIF/WebP
+variants with content-hashed filenames. Files in `public/` are served untouched.
 
-`.github/workflows/deploy.yml` is ready. After you push to GitHub, set **Settings → Pages → Source** to **GitHub Actions**.
+## Social share card
+
+`public/og.jpg` (1200×630) is the site-wide Open Graph image, referenced by
+`BaseLayout.astro`. Pass `image="foo.jpg"` to `BaseLayout` to override per page.
+
+## Deploy
+
+> [!WARNING]
+> There is **no** `.github/workflows/deploy.yml` in this repo yet, so nothing
+> deploys automatically. Add a workflow using `withastro/action`, then set
+> **Settings → Pages → Source** to **GitHub Actions**.
+
+Note that `site` in `astro.config.mjs` and the `Sitemap:` line in
+`public/robots.txt` both hardcode `https://crojasaragonez.github.io` — update
+both when moving to a custom domain.

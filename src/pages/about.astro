@@ -1,7 +1,9 @@
 ---
+import { Picture } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Education from '../components/Education.astro';
 import { site } from '../data/site';
+import portrait from '../assets/carlos_rojas.avif';
 
 const base = import.meta.env.BASE_URL;
 
@@ -10,7 +12,7 @@ const ventureByCompany = Object.fromEntries(site.ventures.map((v) => [v.name, v.
 
 <BaseLayout
   title="About"
-  description={`About ${site.name}: technology entrepreneur, Co-Founder & CAIO at Subaxa, and engineering leader with 18+ years across the Americas.`}
+  description={`About ${site.name}: technology entrepreneur, Co-Founder & CAIO at Subaxa, and engineering leader with 16+ years across the Americas.`}
 >
   <section class="section intro">
     <div class="container intro-grid reveal">
@@ -29,12 +31,16 @@ const ventureByCompany = Object.fromEntries(site.ventures.map((v) => [v.name, v.
         </div>
       </div>
       <figure class="portrait">
-        <img
-          src={`${base}carlos_rojas.avif`}
-          alt={`${site.name}, secondary portrait`}
-          width="360"
-          height="450"
+        <Picture
+          src={portrait}
+          formats={['avif']}
+          fallbackFormat="webp"
+          quality={78}
+          widths={[288, 360]}
+          sizes="(min-width: 880px) 288px, 18rem"
+          alt={`${site.name} in a studio portrait`}
           loading="lazy"
+          decoding="async"
         />
       </figure>
     </div>

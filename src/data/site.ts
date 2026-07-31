@@ -1,10 +1,13 @@
+import golabsOffice from '../assets/golabs_office.avif';
+import subaxaTeam from '../assets/subaxa_team.jpg';
+
 export const site = {
   name: 'Carlos Luis Rojas Aragonés',
   title: 'Technology Entrepreneur',
   tagline:
     'Co-Founder & Chief AI Officer at Subaxa. Co-founder and board member at Golabs. Building AI-native products across the Americas.',
   description:
-    'Technology entrepreneur and executive with 18+ years leading software organizations, AI initiatives, and nearshore delivery. Co-founder of Golabs and Subaxa.',
+    'Technology entrepreneur and executive with 16+ years leading software organizations, AI initiatives, and nearshore delivery. Co-founder of Golabs and Subaxa.',
   location: 'San Carlos, Costa Rica',
   socials: {
     linkedin: 'https://www.linkedin.com/in/crojasaragonez',
@@ -12,7 +15,7 @@ export const site = {
   },
   resumePath: '/resume.pdf',
   impact: [
-    { value: '18+', label: 'Years in technology' },
+    { value: '16+', label: 'Years in technology' },
     { value: '100+', label: 'Engineers scaled' },
     { value: '30%', label: 'Revenue from AI division' },
     { value: 'F500', label: 'Enterprise delivery' },
@@ -22,7 +25,7 @@ export const site = {
     summary:
       'From shipping product as an engineer to co-founding Golabs, scaling it past 100 engineers, and founding Subaxa: a trajectory across delivery, leadership, and AI-native entrepreneurship.',
     paragraphs: [
-      'I started as an engineer shipping product under tight timelines, then co-founded Golabs in 2014. Over roughly twelve years as Delivery Manager and CTO, I helped grow a nearshore engineering company from a small founding team in San Carlos to 100+ engineers across Latin America, including an AI division that reached about 30% of company revenue. In 2023 I sold a majority stake; I remain on the Board of Directors.',
+      'I started as an engineer shipping product under tight timelines, then co-founded Golabs in 2014. Over roughly twelve years as Delivery Manager and CTO, I helped grow a nearshore engineering company from a small founding team in San Carlos to 100+ engineers across Latin America, including an AI division that reached about 30% of company revenue. In 2023 I sold a majority stake and stayed on as CTO until 2026; today I serve on the Board of Directors.',
       'Today I am Co-Founder and Chief AI Officer at Subaxa, an AI-native proptech company transforming how people invest in judicial real estate auctions in Costa Rica. It is the shift from delivering AI services for others to building an AI-native product company with my founding partners, with processes, decisions, and customer interactions designed around intelligence from day one.',
       'I care about talent systems, clear technical strategy, and execution that founders and enterprise leaders can trust. I also teach, speak, and contribute to the open-source community when it sharpens the craft.',
     ],
@@ -42,7 +45,7 @@ export const site = {
       story: [
         'Golabs started in San Carlos, Costa Rica, with a small founding team and a clear bet: build durable nearshore engineering capacity in LATAM for companies that need more than extra hands. They need accountable teams.',
         'I spent the early years as Delivery Manager, establishing how we estimated, staffed, and shipped for clients. As CTO I scaled the technical organization from essentially zero to more than 100 engineers across Costa Rica, Mexico, Nicaragua, Colombia, Guatemala, Argentina, the United States, and other markets, with leadership layers designed to outlast any single hire.',
-        'We stood up an AI division that grew to roughly 30% of company revenue, pairing custom AI systems and nearshore delivery for enterprise and growth-stage clients. In 2023 I sold a majority of my shares. Today I serve on the Board of Directors, staying connected to the company I helped build.',
+        'We stood up an AI division that grew to roughly 30% of company revenue, pairing custom AI systems and nearshore delivery for enterprise and growth-stage clients. In 2023 I sold a majority of my shares and continued as CTO until 2026. Today I serve on the Board of Directors, staying connected to the company I helped build.',
       ],
       focus: [
         {
@@ -70,7 +73,7 @@ export const site = {
         { label: 'Today', detail: 'Board of Directors' },
       ],
       image: {
-        src: 'golabs_office.avif',
+        src: golabsOffice,
         alt: 'Golabs office in Ciudad Quesada, San Carlos',
         caption: 'Golabs office in Ciudad Quesada, San Carlos, Costa Rica.',
         label: 'Office',
@@ -128,7 +131,7 @@ export const site = {
         { label: 'Base', detail: 'San Carlos, Alajuela' },
       ],
       image: {
-        src: 'subaxa_team.jpg',
+        src: subaxaTeam,
         alt: 'Founding team of Subaxa',
         caption:
           'Founders of Subaxa. Standing, left to right: Dennis Valverde and Christopher Aguilar. Seated, left to right: José Mora, Cindy Herrera, Carlos Rojas and Nelson Ugalde.',
@@ -164,7 +167,7 @@ export const site = {
       location: 'LATAM',
       period: '2023 – Present',
       highlights: [
-        'Serve on the board after selling a majority stake in 2023, staying involved in the company I co-founded.',
+        'Joined the board after selling a majority stake in 2023, serving alongside the CTO role until stepping out of it in 2026.',
         'Support strategic direction for a nearshore AI and engineering organization serving clients across the Americas.',
       ],
     },
@@ -172,9 +175,10 @@ export const site = {
       company: 'Golabs',
       role: 'Co-Founder & Chief Technology Officer',
       location: 'LATAM',
-      period: '2019 – 2023',
+      period: '2019 – July 2026',
       highlights: [
         'Created and led the AI division, achieving roughly 30% of total company revenue through AI services and solutions.',
+        'Stayed on as CTO for three years after the 2023 majority sale, leading technology through the ownership transition.',
         'Scaled the company from 0 to 100+ engineers across Latin America, supporting complex, high-impact projects for Fortune 500 clients.',
         'Acted as a strategic partner to executive leadership and clients, translating business objectives into technical roadmaps and execution plans.',
         'Built leadership layers (tech leads, managers, directors) to sustain growth beyond 100+ engineers.',
