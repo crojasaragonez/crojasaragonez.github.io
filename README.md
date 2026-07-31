@@ -1,8 +1,6 @@
 # Carlos Luis Rojas Aragonés — Personal Website
 
-Static personal brand site built with [Astro](https://astro.build), deployed to GitHub Pages.
-
-**Live URL:** https://crojasaragonez.github.io/website/
+Static personal brand site built with [Astro](https://astro.build). Configured for GitHub Pages at `https://crojasaragonez.github.io/website/` when you publish the repo.
 
 ## Develop
 
@@ -10,6 +8,8 @@ Static personal brand site built with [Astro](https://astro.build), deployed to 
 npm install
 npm run dev
 ```
+
+Open the URL Astro prints (paths use the `/website/` base).
 
 ## Build
 
@@ -26,6 +26,6 @@ npm run preview
 - Testimonials: `src/content/testimonials/`
 - Résumé PDF: `public/resume.pdf`
 
-## Deploy
+## Deploy (manual)
 
-Pushes to `main` deploy via `.github/workflows/deploy.yml`. In the GitHub repo, set **Settings → Pages → Source** to **GitHub Actions**.
+`.github/workflows/deploy.yml` is ready. After you push to GitHub, set **Settings → Pages → Source** to **GitHub Actions**.
