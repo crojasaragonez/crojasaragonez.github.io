@@ -1,12 +1,51 @@
 ---
 import { site } from '../data/site';
+
+const base = import.meta.env.BASE_URL;
+
+const mitPhotos = [
+  {
+    src: 'mit_2.jpeg',
+    alt: 'Carlos Rojas at Killian Court in front of the MIT Great Dome',
+    caption: 'On campus at MIT, Killian Court.',
+  },
+  {
+    src: 'mit_1.jpeg',
+    alt: 'MIT Professional Education badge for Carlos Luis Rojas Aragonés, CTO at Golabs',
+    caption: 'MIT Professional Education, Chief Technology Officer program.',
+  },
+];
 ---
 
 <section class="section" id="education">
-  <div class="container reveal">
-    <p class="section-label">Education</p>
-    <h2 class="section-title">Credentials & teaching</h2>
-    <ul class="list">
+  <div class="container">
+    <div class="intro reveal">
+      <p class="section-label">Education</p>
+      <h2 class="section-title">Credentials & teaching</h2>
+      <p class="section-lead">
+        The MIT CTO Executive Program is a defining chapter right now: sharpening how I lead technology strategy,
+        AI, and organizations at the level the work demands.
+      </p>
+    </div>
+
+    <div class="mit-gallery reveal">
+      {
+        mitPhotos.map((photo) => (
+          <figure>
+            <img
+              src={`${base}${photo.src}`}
+              alt={photo.alt}
+              width="800"
+              height="1066"
+              loading="lazy"
+            />
+            <figcaption>{photo.caption}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+
+    <ul class="list reveal">
       {
         site.education.map((item) => (
           <li>
@@ -19,14 +58,36 @@ import { site } from '../data/site';
         ))
       }
     </ul>
-    <p class="teaching">{site.teaching}</p>
+    <p class="teaching reveal">{site.teaching}</p>
   </div>
 </section>
 
 <style>
+  .mit-gallery {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .mit-gallery figure {
+    margin: 0;
+  }
+
+  .mit-gallery img {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+  }
+
+  .mit-gallery figcaption {
+    margin-top: 0.7rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
   .list {
     list-style: none;
-    margin: 2rem 0 0;
+    margin: 2.75rem 0 0;
     padding: 0;
     display: grid;
     gap: 1.25rem;
@@ -61,6 +122,11 @@ import { site } from '../data/site';
   }
 
   @media (min-width: 700px) {
+    .mit-gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.75rem;
+    }
+
     .list li {
       grid-template-columns: 1fr auto;
       align-items: start;

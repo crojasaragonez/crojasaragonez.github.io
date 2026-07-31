@@ -131,7 +131,7 @@ export const site = {
         src: 'subaxa_team.jpg',
         alt: 'Founding team of Subaxa',
         caption:
-          'Founders of Subaxa. Standing, left to right: Carlos Rojas and Christopher Aguilar. Seated, left to right: José Mora, Cindy Herrera, Dennis Valverde, and Nelson Ugalde.',
+          'Founders of Subaxa. Standing, left to right: Dennis Valverde and Christopher Aguilar. Seated, left to right: José Mora, Cindy Herrera, Carlos Rojas and Nelson Ugalde.',
         label: 'Team',
         heading: 'The founding team',
       },
