@@ -13,19 +13,30 @@ const ventureByCompany = Object.fromEntries(site.ventures.map((v) => [v.name, v.
   description={`About ${site.name}: technology entrepreneur, Co-Founder & CAIO at Subaxa, and engineering leader with 18+ years across the Americas.`}
 >
   <section class="section intro">
-    <div class="container reveal">
-      <p class="section-label">About</p>
-      <h1 class="page-title">{site.about.lead}</h1>
-      <p class="location">{site.location}</p>
-      <div class="copy">
-        {site.about.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    <div class="container intro-grid reveal">
+      <div class="intro-copy">
+        <p class="section-label">About</p>
+        <h1 class="page-title">{site.about.lead}</h1>
+        <p class="location">{site.location}</p>
+        <div class="copy">
+          {site.about.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-primary" href={site.socials.linkedin} target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+          <a class="btn btn-secondary" href={`${base}resume.pdf`}>Download résumé</a>
+        </div>
       </div>
-      <div class="btn-row">
-        <a class="btn btn-primary" href={site.socials.linkedin} target="_blank" rel="noopener noreferrer">
-          LinkedIn
-        </a>
-        <a class="btn btn-secondary" href={`${base}resume.pdf`}>Download résumé</a>
-      </div>
+      <figure class="portrait">
+        <img
+          src={`${base}carlos_rojas.avif`}
+          alt={`${site.name}, secondary portrait`}
+          width="360"
+          height="450"
+          loading="lazy"
+        />
+      </figure>
     </div>
   </section>
 
@@ -141,6 +152,12 @@ const ventureByCompany = Object.fromEntries(site.ventures.map((v) => [v.name, v.
     padding-top: clamp(3rem, 8vw, 5rem);
   }
 
+  .intro-grid {
+    display: grid;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
   .page-title {
     font-size: clamp(2.2rem, 5vw, 3.2rem);
     max-width: 16ch;
@@ -167,6 +184,30 @@ const ventureByCompany = Object.fromEntries(site.ventures.map((v) => [v.name, v.
 
   .btn-row {
     margin-top: 1.75rem;
+  }
+
+  .portrait {
+    margin: 0;
+    max-width: 18rem;
+  }
+
+  .portrait img {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+  }
+
+  @media (min-width: 880px) {
+    .intro-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(14rem, 18rem);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .portrait {
+      justify-self: end;
+      max-width: none;
+    }
   }
 
   .timeline {
