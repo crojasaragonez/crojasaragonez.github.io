@@ -1,6 +1,6 @@
 ---
 title: Building AI-native companies
-description: Why treating AI as a bolt-on feature fails, and what it means to design product, process, and organization around intelligence from day one.
+description: " Why treating AI as a bolt-on feature fails, and what it means to design product, process, and organization around intelligence from day one."
 pubDate: 2026-07-31
 ---
 

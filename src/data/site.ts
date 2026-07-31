@@ -69,6 +69,22 @@ export const site = {
         { label: 'Majority sale', detail: '2023' },
         { label: 'Today', detail: 'Board of Directors' },
       ],
+      image: {
+        src: 'golabs_office.avif',
+        alt: 'Golabs office in Ciudad Quesada, San Carlos',
+        caption: 'Golabs office in Ciudad Quesada, San Carlos, Costa Rica.',
+        label: 'Office',
+        heading: 'Home base in Ciudad Quesada',
+      },
+      press: [
+        {
+          outlet: 'El Financiero',
+          title:
+            'Go-Labs, la startup de San Carlos que un estudio ubica como la segunda mejor firma para jóvenes en Costa Rica',
+          url: 'https://www.elfinancierocr.com/pymes/historias/go-labs-la-startup-de-san-carlos-que-un-estudio/6QLEWQXF3FBMTDTT7Q7ZU4AZ7Y/story/',
+          date: 'October 2021',
+        },
+      ],
     },
     {
       slug: 'subaxa',
@@ -110,6 +126,23 @@ export const site = {
         { label: 'Thesis', detail: 'Intelligence in the core loop, not a bolt-on' },
         { label: 'Team', detail: 'Legal · investment · product · AI' },
         { label: 'Base', detail: 'San Carlos, Alajuela' },
+      ],
+      image: {
+        src: 'subaxa_team.jpg',
+        alt: 'Founding team of Subaxa',
+        caption:
+          'Founders of Subaxa. Standing, left to right: Carlos Rojas and Christopher Aguilar. Seated, left to right: José Mora, Cindy Herrera, Dennis Valverde, and Nelson Ugalde.',
+        label: 'Team',
+        heading: 'The founding team',
+      },
+      press: [
+        {
+          outlet: 'El Financiero',
+          title:
+            '¿Le interesa comprar propiedades en remate en Costa Rica? Esta herramienta las identifica y permite determinar cuáles le convienen',
+          url: 'https://www.elfinancierocr.com/tecnologia/le-interesa-comprar-propiedades-en-remate-en-costa/JMBYACBI5FGFVDMBEBAPDKIJUM/story/',
+          date: 'July 2026',
+        },
       ],
     },
   ],
