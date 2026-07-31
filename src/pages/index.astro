@@ -3,10 +3,9 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import Impact from '../components/Impact.astro';
-import About from '../components/About.astro';
+import AboutTeaser from '../components/AboutTeaser.astro';
 import Expertise from '../components/Expertise.astro';
 import Speaking from '../components/Speaking.astro';
-import Education from '../components/Education.astro';
 import Testimonials from '../components/Testimonials.astro';
 import BlogTeaser from '../components/BlogTeaser.astro';
 import Contact from '../components/Contact.astro';
@@ -27,10 +26,9 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 <BaseLayout>
   <Hero />
   <Impact />
-  <About />
+  <AboutTeaser />
   <Expertise />
   <Speaking talks={talks} />
-  <Education />
   <Testimonials testimonials={testimonials} />
   <BlogTeaser posts={posts} />
   <Contact />

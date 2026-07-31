@@ -20,7 +20,8 @@ npm run preview
 
 ## Content
 
-- Site copy & metrics: `src/data/site.ts`
+- Site copy, experience & metrics: `src/data/site.ts`
+- About page: `src/pages/about.astro`
 - Blog posts: `src/content/blog/`
 - Talks: `src/content/talks/`
 - Testimonials: `src/content/testimonials/`

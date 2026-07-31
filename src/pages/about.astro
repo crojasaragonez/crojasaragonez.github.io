@@ -1,0 +1,280 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Education from '../components/Education.astro';
+import { site } from '../data/site';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="About"
+  description={`About ${site.name} — technology entrepreneur, Co-Founder & CAIO at Subaxa, and engineering leader with 18+ years across the Americas.`}
+>
+  <section class="section intro">
+    <div class="container reveal">
+      <p class="section-label">About</p>
+      <h1 class="page-title">{site.about.lead}</h1>
+      <p class="location">{site.location}</p>
+      <div class="copy">
+        {site.about.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href={site.socials.linkedin} target="_blank" rel="noopener noreferrer">
+          LinkedIn
+        </a>
+        <a class="btn btn-secondary" href={`${base}resume.pdf`}>Download résumé</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="trajectory">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Trajectory</p>
+        <h2 class="section-title">Professional experience</h2>
+        <p class="section-lead">
+          Builder, delivery leader, CTO, and founder — serving clients mainly in the United States and across the Americas.
+        </p>
+      </div>
+      <ol class="timeline reveal">
+        {
+          site.experience.map((job) => (
+            <li>
+              <div class="meta">
+                <span class="period">{job.period}</span>
+                <span class="place">{job.location}</span>
+              </div>
+              <h3>{job.role}</h3>
+              <p class="company">{job.company}</p>
+              <ul>
+                {job.highlights.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="highlights">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Impact</p>
+        <h2 class="section-title">Leadership highlights</h2>
+      </div>
+      <ul class="highlights reveal">
+        {
+          site.highlights.map((item) => (
+            <li>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <Education />
+
+  <section class="section" id="skills">
+    <div class="container reveal">
+      <p class="section-label">Skills</p>
+      <h2 class="section-title">Capabilities & languages</h2>
+      <div class="skills-grid">
+        <div>
+          <h3>Technical</h3>
+          <ul>
+            {site.skills.technical.map((skill) => <li>{skill}</li>)}
+          </ul>
+        </div>
+        <div>
+          <h3>Languages</h3>
+          <ul>
+            {
+              site.skills.languages.map((lang) => (
+                <li>
+                  {lang.name} <span>({lang.level})</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div>
+          <h3>Interests</h3>
+          <ul>
+            {site.skills.interests.map((interest) => <li>{interest}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container reveal">
+      <h2 class="section-title">Let’s connect</h2>
+      <p class="section-lead">
+        For speaking, founder conversations, or executive opportunities — reach me on LinkedIn.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href={site.socials.linkedin} target="_blank" rel="noopener noreferrer">
+          Message on LinkedIn
+        </a>
+        <a class="btn btn-secondary" href={`${base}#contact`}>Back to contact</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .intro {
+    padding-top: clamp(3rem, 8vw, 5rem);
+  }
+
+  .page-title {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    max-width: 16ch;
+    margin-bottom: 0.75rem;
+  }
+
+  .location {
+    margin: 0 0 1.75rem;
+    color: var(--secondary);
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .copy {
+    display: grid;
+    gap: 1rem;
+    max-width: 46rem;
+  }
+
+  .copy p {
+    font-size: 1.05rem;
+  }
+
+  .btn-row {
+    margin-top: 1.75rem;
+  }
+
+  .timeline {
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0;
+  }
+
+  .timeline > li {
+    padding: 1.75rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .timeline > li:last-child {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-bottom: 0.45rem;
+    color: var(--secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .timeline h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1.3rem;
+  }
+
+  .company {
+    margin: 0 0 1rem;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .timeline ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    max-width: 48rem;
+  }
+
+  .timeline ul li {
+    color: var(--text-muted);
+  }
+
+  .timeline ul li + li {
+    margin-top: 0.45rem;
+  }
+
+  .highlights {
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .highlights li {
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .highlights h3 {
+    margin: 0 0 0.45rem;
+    font-size: 1.15rem;
+  }
+
+  .highlights p {
+    margin: 0;
+    max-width: 36rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .skills-grid h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+  }
+
+  .skills-grid ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .skills-grid li {
+    color: var(--text-muted);
+  }
+
+  .skills-grid span {
+    color: var(--secondary);
+  }
+
+  .cta {
+    padding-bottom: clamp(5rem, 12vw, 8rem);
+  }
+
+  @media (min-width: 800px) {
+    .highlights {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.75rem 2rem;
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>
