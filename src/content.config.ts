@@ -18,9 +18,13 @@ const talks = defineCollection({
   schema: z.object({
     title: z.string(),
     event: z.string(),
-    date: z.coerce.date(),
+    topic: z.string(),
+    description: z.string().optional(),
+    date: z.coerce.date().optional(),
     location: z.string().optional(),
     url: z.string().url().optional(),
+    featured: z.boolean().optional().default(false),
+    order: z.number().optional().default(0),
   }),
 });
 

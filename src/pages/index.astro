@@ -5,14 +5,15 @@ import Hero from '../components/Hero.astro';
 import Impact from '../components/Impact.astro';
 import AboutTeaser from '../components/AboutTeaser.astro';
 import Expertise from '../components/Expertise.astro';
-import Speaking from '../components/Speaking.astro';
+import SpeakingTeaser from '../components/SpeakingTeaser.astro';
 import Testimonials from '../components/Testimonials.astro';
 import BlogTeaser from '../components/BlogTeaser.astro';
 import Contact from '../components/Contact.astro';
 
-const talks = (await getCollection('talks')).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-);
+const talks = (await getCollection('talks'))
+  .filter((talk) => talk.data.featured)
+  .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
+  .slice(0, 5);
 
 const testimonials = (await getCollection('testimonials')).sort(
   (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
@@ -28,7 +29,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   <Impact />
   <AboutTeaser />
   <Expertise />
-  <Speaking talks={talks} />
+  <SpeakingTeaser talks={talks} />
   <Testimonials testimonials={testimonials} />
   <BlogTeaser posts={posts} />
   <Contact />
