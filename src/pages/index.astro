@@ -33,6 +33,6 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   <Expertise />
   <SpeakingTeaser talks={talks} />
   <Testimonials testimonials={testimonials} />
-  <BlogTeaser posts={posts} />
+  {posts.length > 0 && <BlogTeaser posts={posts} />}
   <Contact />
 </BaseLayout>

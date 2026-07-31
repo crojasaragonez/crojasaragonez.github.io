@@ -23,6 +23,7 @@ const topicOrder = Object.keys(byTopic).sort((a, b) => {
 });
 
 const presentationsRepo = 'https://github.com/crojasaragonez/presentations';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -30,28 +31,52 @@ const presentationsRepo = 'https://github.com/crojasaragonez/presentations';
   description={`Talks and workshops by ${site.name}: AI agents, cloud architecture, APIs, and engineering leadership.`}
 >
   <section class="section intro">
-    <div class="container reveal">
-      <p class="section-label">Speaking</p>
-      <h1 class="page-title">Talks for builders and leaders</h1>
-      <div class="copy">
-        <p>
-          Tech talks and workshops from across my career on AI agents, cloud architecture, APIs, web platforms,
-          and engineering craft, for teams, leadership forums, and developer communities.
-        </p>
-        <p>
-          Slide decks, demos, and labs are open in my
-          <a href={presentationsRepo} target="_blank" rel="noopener noreferrer">presentations repository</a>.
-          Invite me when you want practical demos, clear frameworks, and lessons from shipping and leading
-          across the Americas.
-        </p>
+    <div class="container intro-grid reveal">
+      <div class="intro-copy">
+        <p class="section-label">Speaking</p>
+        <h1 class="page-title">Talks for builders and leaders</h1>
+        <div class="copy">
+          <p>
+            Tech talks and workshops from across my career on AI agents, cloud architecture, APIs, web platforms,
+            and engineering craft, for teams, leadership forums, and developer communities.
+          </p>
+          <p>
+            Slide decks, demos, and labs are open in my
+            <a href={presentationsRepo} target="_blank" rel="noopener noreferrer">presentations repository</a>.
+            Invite me when you want practical demos, clear frameworks, and lessons from shipping and leading
+            across the Americas.
+          </p>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-primary" href={site.socials.linkedin} target="_blank" rel="noopener noreferrer">
+            Invite via LinkedIn
+          </a>
+          <a class="btn btn-secondary" href={presentationsRepo} target="_blank" rel="noopener noreferrer">
+            Presentations repo
+          </a>
+        </div>
       </div>
-      <div class="btn-row">
-        <a class="btn btn-primary" href={site.socials.linkedin} target="_blank" rel="noopener noreferrer">
-          Invite via LinkedIn
-        </a>
-        <a class="btn btn-secondary" href={presentationsRepo} target="_blank" rel="noopener noreferrer">
-          Presentations repo
-        </a>
+
+      <div class="photos" aria-label="Photos from speaking engagements">
+        <figure class="shot shot-stage">
+          <img
+            src={`${base}talks_1.jpg`}
+            alt="Carlos Rojas speaking on stage with a microphone at a conference"
+            width="1179"
+            height="1179"
+            loading="eager"
+          />
+        </figure>
+
+        <figure class="shot shot-portrait">
+          <img
+            src={`${base}talks_2.jpg`}
+            alt="Carlos Rojas at a corporate culture and leadership event"
+            width="1280"
+            height="853"
+            loading="eager"
+          />
+        </figure>
       </div>
     </div>
   </section>
@@ -157,6 +182,101 @@ const presentationsRepo = 'https://github.com/crojasaragonez/presentations';
 <style>
   .intro {
     padding-top: clamp(3rem, 8vw, 5rem);
+  }
+
+  .intro-grid {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .photos {
+    display: grid;
+    gap: 0.85rem;
+    max-width: 22rem;
+    margin-inline: auto;
+  }
+
+  .shot {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+  }
+
+  .shot img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.06);
+    filter: grayscale(100%) contrast(1.18) brightness(0.88);
+    transition:
+      transform 0.7s var(--ease),
+      filter 0.7s var(--ease);
+  }
+
+  /* Duotone tint — hides compression artifacts */
+  .shot::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(145deg, var(--accent) 0%, var(--accent-deep) 55%, var(--secondary) 100%);
+    mix-blend-mode: color;
+    opacity: 0.82;
+    pointer-events: none;
+    transition: opacity 0.4s var(--ease);
+  }
+
+  /* Vignette + film grain */
+  .shot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background:
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E"),
+      radial-gradient(ellipse 90% 85% at 50% 45%, transparent 35%, rgba(8, 11, 18, 0.72) 100%),
+      linear-gradient(180deg, transparent 50%, rgba(8, 11, 18, 0.78) 100%);
+    background-size: 180px 180px, cover, cover;
+    mix-blend-mode: overlay;
+    opacity: 0.38;
+    pointer-events: none;
+    transition: opacity 0.4s var(--ease);
+  }
+
+  .shot:hover img {
+    transform: scale(1.1);
+    filter: grayscale(40%) contrast(1.12) brightness(0.92);
+  }
+
+  .shot:hover::before {
+    opacity: 0.62;
+  }
+
+  .shot:hover::after {
+    opacity: 0.28;
+  }
+
+  .shot-stage {
+    aspect-ratio: 4 / 3;
+  }
+
+  .shot-stage img {
+    object-position: center 22%;
+  }
+
+  .shot-portrait {
+    aspect-ratio: 5 / 4;
+    width: 78%;
+    justify-self: end;
+    margin-top: -2.5rem;
+  }
+
+  .shot-portrait img {
+    object-position: center 18%;
   }
 
   .page-title {
@@ -274,6 +394,19 @@ const presentationsRepo = 'https://github.com/crojasaragonez/presentations';
     padding-bottom: clamp(5rem, 12vw, 8rem);
   }
 
+  @media (min-width: 880px) {
+    .intro-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(16rem, 22rem);
+      gap: 3rem;
+    }
+
+    .photos {
+      justify-self: end;
+      max-width: none;
+      width: 100%;
+    }
+  }
+
   @media (min-width: 800px) {
     .featured-talks {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -283,6 +416,18 @@ const presentationsRepo = 'https://github.com/crojasaragonez/presentations';
     .featured-talks li:nth-child(1),
     .featured-talks li:nth-child(2) {
       border-top: 1px solid var(--border);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .shot img,
+    .shot::before,
+    .shot::after {
+      transition: none;
+    }
+
+    .shot:hover img {
+      transform: scale(1.06);
     }
   }
 </style>

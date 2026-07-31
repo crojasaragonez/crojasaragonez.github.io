@@ -22,21 +22,25 @@ const formatter = new Intl.DateTimeFormat('en', {
     <div class="container">
       <p class="section-label">Blog</p>
       <h1 class="page-title">Notes on technology & leadership</h1>
-      <ul class="posts">
-        {
-          posts.map((post) => (
-            <li>
-              <a href={`${base}blog/${post.id}/`}>
-                <time datetime={post.data.pubDate.toISOString()}>
-                  {formatter.format(post.data.pubDate)}
-                </time>
-                <h2>{post.data.title}</h2>
-                <p>{post.data.description}</p>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+      {
+        posts.length === 0 ? (
+          <p class="empty">New posts coming soon.</p>
+        ) : (
+          <ul class="posts">
+            {posts.map((post) => (
+              <li>
+                <a href={`${base}blog/${post.id}/`}>
+                  <time datetime={post.data.pubDate.toISOString()}>
+                    {formatter.format(post.data.pubDate)}
+                  </time>
+                  <h2>{post.data.title}</h2>
+                  <p>{post.data.description}</p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
     </div>
   </section>
 </BaseLayout>
@@ -46,6 +50,12 @@ const formatter = new Intl.DateTimeFormat('en', {
     font-size: clamp(2rem, 4vw, 2.8rem);
     max-width: 16ch;
     margin-bottom: 2rem;
+  }
+
+  .empty {
+    margin: 0;
+    max-width: 36rem;
+    color: var(--text-muted);
   }
 
   .posts {
