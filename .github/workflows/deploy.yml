@@ -19,9 +19,21 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # configure-pages needs these to enable the Pages site on a fresh repo.
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      # Asserts Pages is enabled with the "GitHub Actions" source. Without this
+      # the failure surfaces much later, as an opaque 404 from deploy-pages.
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Set up Node
         uses: actions/setup-node@v4
