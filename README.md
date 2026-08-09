@@ -46,7 +46,7 @@ cannot reach the live site.
 > [!IMPORTANT]
 > **The repository must be named `crojasaragonez.github.io`.** GitHub Pages
 > serves any other repository under `/<repo-name>/`, but `astro.config.mjs`
-> declares the site at the root — so under a different name every link, asset
+> declares the site at the root, so under a different name every link, asset
 > and canonical URL would 404.
 
 1. **Settings → General → Repository name** → `crojasaragonez.github.io`
@@ -67,5 +67,5 @@ both and add `public/CNAME` containing the bare domain.
 > [!CAUTION]
 > Serving from a sub-path (setting `base` in `astro.config.mjs`) needs code
 > changes first. Components build links as `` `${base}about/` ``, and Astro's
-> `BASE_URL` has **no** trailing slash once `base` is set — producing
+> `BASE_URL` has **no** trailing slash once `base` is set, producing
 > `/personal_websiteabout/`. Normalise `BASE_URL` everywhere before setting it.

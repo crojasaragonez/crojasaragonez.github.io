@@ -35,7 +35,7 @@ export const site = {
       slug: 'golabs',
       name: 'Golabs',
       role: 'Co-Founder · Board of Directors',
-      period: '2014 – Present',
+      period: '2014 - Present',
       location: 'San Carlos & San José, Costa Rica · LATAM',
       website: 'https://golabstech.com',
       websiteLabel: 'golabstech.com',
@@ -165,7 +165,7 @@ export const site = {
       company: 'Golabs',
       role: 'Board of Directors',
       location: 'LATAM',
-      period: '2023 – Present',
+      period: '2023 - Present',
       highlights: [
         'Joined the board after selling a majority stake in 2023, serving alongside the CTO role until stepping out of it in 2026.',
         'Support strategic direction for a nearshore AI and engineering organization serving clients across the Americas.',
@@ -175,7 +175,7 @@ export const site = {
       company: 'Golabs',
       role: 'Co-Founder & Chief Technology Officer',
       location: 'LATAM',
-      period: '2019 – July 2026',
+      period: '2019 - July 2026',
       highlights: [
         'Created and led the AI division, achieving roughly 30% of total company revenue through AI services and solutions.',
         'Stayed on as CTO for three years after the 2023 majority sale, leading technology through the ownership transition.',
@@ -190,7 +190,7 @@ export const site = {
       company: 'Golabs',
       role: 'Co-Founder & Delivery Manager',
       location: 'Costa Rica',
-      period: '2014 – 2019',
+      period: '2014 - 2019',
       highlights: [
         'Co-founded Golabs and led end-to-end delivery for multiple client engagements, establishing repeatable processes across distributed teams.',
         'Standardized delivery processes across projects, increasing consistency and reducing onboarding time for new team members.',
@@ -202,7 +202,7 @@ export const site = {
       company: 'Universidad Técnica Nacional',
       role: 'Software Engineering Professor',
       location: 'Costa Rica',
-      period: '2014 – 2022',
+      period: '2014 - 2022',
       highlights: [
         'Guided student teams in launching startup projects from idea validation to MVP development and demo presentations.',
         'Fostered a hands-on learning environment through project-based coursework, hackathons, and real client simulations.',
@@ -214,7 +214,7 @@ export const site = {
       company: 'Avantica',
       role: 'Software Engineer',
       location: 'Costa Rica',
-      period: '2011 – 2014',
+      period: '2011 - 2014',
       highlights: [
         'Owned end-to-end feature development from design through deployment, consistently meeting or exceeding client expectations.',
         'Supported multiple client engagements while maintaining high productivity and delivery standards.',
@@ -225,7 +225,7 @@ export const site = {
       company: 'NCQ Solution',
       role: 'Software Developer',
       location: 'Costa Rica',
-      period: '2010 – 2011',
+      period: '2010 - 2011',
       highlights: [
         'Joined at an early stage and helped build the initial product from concept to first paying customers.',
         'Designed and implemented core system architecture that scaled as the company grew.',
@@ -306,7 +306,7 @@ export const site = {
     },
   ],
   teaching:
-    'Software Engineering Professor at Universidad Técnica Nacional (2014–2022), guiding student teams from idea validation to MVP.',
+    'Software Engineering Professor at Universidad Técnica Nacional (2014-2022), guiding student teams from idea validation to MVP.',
   skills: {
     technical: [
       'Cloud-native architectures (AWS)',
