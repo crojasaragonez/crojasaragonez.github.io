@@ -44,7 +44,12 @@ const personSchema = {
     '@type': 'EducationalOrganization',
     name: entry.school,
   })),
-  knowsAbout: site.expertise.map((entry) => entry.title),
+  // Broad capabilities plus the concrete tools behind them, so the entity graph
+  // carries the same keywords a reader sees in the Stack section.
+  knowsAbout: [
+    ...site.expertise.map((entry) => entry.title),
+    ...site.stack.flatMap((group) => group.items),
+  ],
   knowsLanguage: site.skills.languages.map((language) => language.name),
 };
 ---

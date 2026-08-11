@@ -288,6 +288,38 @@ export const site = {
         'Distributed teams across LATAM and the US delivering mission-critical software for Fortune 500 and growth-stage companies.',
     },
   ],
+  // Concrete technologies, grouped for scanning. Every entry should be something
+  // I have shipped or taught: most map to a talk in src/content/talks.
+  stack: [
+    {
+      group: 'AI & agents',
+      items: [
+        'LLM agents',
+        'Multi-agent systems',
+        'RAG pipelines',
+        'Vector databases',
+        'Prompt & context engineering',
+      ],
+    },
+    {
+      group: 'Cloud & infrastructure',
+      items: ['AWS', 'Serverless & FaaS', 'Docker & Compose', 'Terraform / IaC', 'Linux & systemd'],
+    },
+    {
+      group: 'APIs & distributed systems',
+      items: [
+        'REST API design',
+        'GraphQL & Apollo',
+        'Message queues',
+        'Event-driven architecture',
+        'SSR / SSG / CSR',
+      ],
+    },
+    {
+      group: 'Languages & runtimes',
+      items: ['Python', 'JavaScript & TypeScript', 'Node.js', 'Ruby', 'PHP / Laravel'],
+    },
+  ],
   education: [
     {
       school: 'Massachusetts Institute of Technology',

@@ -6,6 +6,7 @@ import Impact from '../components/Impact.astro';
 import AboutTeaser from '../components/AboutTeaser.astro';
 import VenturesTeaser from '../components/VenturesTeaser.astro';
 import Expertise from '../components/Expertise.astro';
+import Stack from '../components/Stack.astro';
 import SpeakingTeaser from '../components/SpeakingTeaser.astro';
 import BlogTeaser from '../components/BlogTeaser.astro';
 import Contact from '../components/Contact.astro';
@@ -26,6 +27,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   <AboutTeaser />
   <VenturesTeaser />
   <Expertise />
+  <Stack />
   <SpeakingTeaser talks={talks} />
   {posts.length > 0 && <BlogTeaser posts={posts} />}
   <Contact />

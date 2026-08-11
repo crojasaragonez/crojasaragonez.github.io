@@ -1,0 +1,92 @@
+---
+import { site } from '../data/site';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="section stack" id="stack">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Stack</p>
+      <h2 class="section-title">What I build with</h2>
+      <p class="section-lead">
+        The technologies behind the teams and products above. Most of them are also the subject of a
+        <a href={`${base}speaking/`}>talk or workshop</a> I have given.
+      </p>
+    </div>
+    <ul class="groups reveal">
+      {
+        site.stack.map((group) => (
+          <li class="group">
+            <h3>{group.group}</h3>
+            <ul class="chips">
+              {group.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  /* Sits directly under Expertise, so drop the leading gap and let the two read
+     as one block: abstract capabilities first, concrete tools second. */
+  .stack {
+    padding-top: 0;
+  }
+
+  .groups {
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 2rem 1.75rem;
+  }
+
+  .group {
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-strong);
+  }
+
+  .group h3 {
+    margin-bottom: 0.9rem;
+    color: var(--text);
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+  }
+
+  .chips {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .chips li {
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--bg-elevated) 55%, transparent);
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  @media (min-width: 640px) {
+    .groups {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .groups {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 2rem 1.5rem;
+    }
+  }
+</style>
