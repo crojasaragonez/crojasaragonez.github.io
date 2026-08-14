@@ -1,10 +1,10 @@
 ---
 title: The Formats Nobody Was Supposed to Write
-description: "Last week three non-technical people sent me reports in HTML. We also write LaTeX-quality documents without ever opening a LaTeX editor. The file formats that used to require a specialist are now just another thing you can ask for."
+description: "Three colleagues sent me reports in HTML last week, and none of them writes code. We also produce LaTeX-quality documents without ever opening a LaTeX editor. The formats that used to require a specialist are now just another thing you can ask for."
 pubDate: 2026-08-14
 ---
 
-During the last week, three different non-technical people delivered reports I had asked for in HTML.
+Three different colleagues sent me reports in HTML last week. Not one of them thought it was a strange thing to be asked for.
 
 None of them writes code. None of them opened a text editor with syntax highlighting, and I doubt any of them could tell me what a closing tag is. They sent the file, I opened it in a browser, and it looked exactly like a report should look. The brand guidelines were followed to the letter. And each one read just as well on my phone as on my laptop, which is something the PDFs I normally receive have never managed.
 
