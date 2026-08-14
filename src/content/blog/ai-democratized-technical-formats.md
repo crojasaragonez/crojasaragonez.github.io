@@ -6,7 +6,7 @@ pubDate: 2026-08-14
 
 During the last week, three different non-technical people delivered reports I had asked for in HTML.
 
-None of them writes code. None of them opened a text editor with syntax highlighting, and I doubt any of them could tell me what a closing tag is. They sent the file, I opened it in a browser, and it looked exactly like a report should look.
+None of them writes code. None of them opened a text editor with syntax highlighting, and I doubt any of them could tell me what a closing tag is. They sent the file, I opened it in a browser, and it looked exactly like a report should look. The brand guidelines were followed to the letter. And each one read just as well on my phone as on my laptop, which is something the PDFs I normally receive have never managed.
 
 Before agents, that would have been unthinkable.
 
@@ -63,31 +63,26 @@ Now the entry cost is a sentence.
 
 I wanted to check whether this was just my own bubble. It isn't.
 
-**LaTeX.** In June 2025, Overleaf shipped AI writing tools to its 20 million-plus users, with the explicit pitch that people would "spend less time wrestling with LaTeX code and perfecting their prose, and more time focusing on groundbreaking research." When the largest LaTeX platform in the world describes its own syntax as the obstacle, the argument is over. Typst, a modern alternative with far friendlier markup, has gone from curiosity to something journals are starting to accept, which only makes sense if people want LaTeX-grade output without the LaTeX apprenticeship.
+**Documents are now the main thing people build.** Anthropic's Economic Index found that documents and reports are the largest category of work output, at 20% of work conversations, ahead of code. The default output of these tools is a document, not a program.
 
-**HTML and code in general.** GitHub's Octoverse 2025 report counted 36.2 million new developer accounts in a single year, pushing the platform past 180 million, more than one new developer per second. March 2025 was the largest month for first-time open source contributors on record, at 255,000. One in three new developers came from a country outside the previous global top ten. No profession grows at that rate on its own.
+**The LaTeX platforms are selling relief from LaTeX.** In June 2025, Overleaf shipped AI writing tools to its 20 million-plus users, promising they would "spend less time wrestling with LaTeX code." When the largest LaTeX platform in the world describes its own syntax as the obstacle, the argument is over. Typst, a newer alternative with much friendlier markup, is meanwhile moving from curiosity to something journals accept.
 
-**Documents as the main output.** Anthropic's Economic Index found that 93% of Claude conversations produce an artifact, and that documents and reports are the largest category of work output at 20% of work conversations, ahead of code. The default thing people build with these tools is a document.
+**The language caught up too.** Collins named "vibe coding" its Word of the Year for 2025: describing what you want in plain language and letting the machine write the code. Dictionaries don't do that for niche practices.
 
-**The culture caught up too.** Collins named "vibe coding" its Word of the Year for 2025, defining it as describing what you want in plain language and letting the machine produce the code. Dictionaries don't do that for niche practices.
+The number I keep coming back to is the first one. Documents outrank code, which means the people driving this are not developers.
 
 ## Other formats that fell over
 
 HTML and LaTeX are the two I noticed because they landed in my inbox. They are not the only ones.
 
-<figure class="fig">
-<svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="f2t f2d">
-<title id="f2t">Technical formats and the gatekeeper each one used to require</title>
-<desc id="f2d">Four formats and what used to stand between a person and using them. HTML and CSS required a front-end developer. LaTeX required TeXstudio, TeX Live and a manual. SVG required a designer and a licensed editor. Mermaid and Graphviz required a diagramming tool and its lock-in.</desc>
-<text x="20" y="30" font-size="16" font-weight="600" fill="var(--text)">The format</text>
-<text x="580" y="30" text-anchor="end" font-size="16" font-weight="600" fill="var(--text)">What used to guard it</text>
-<rect x="20" y="48" width="560" height="34" rx="2" fill="var(--bg-elevated)" stroke="var(--border)"/><rect x="20" y="48" width="3" height="34" fill="var(--accent)"/><text x="38" y="70" font-size="14" fill="var(--text)">HTML &amp; CSS</text><text x="562" y="70" text-anchor="end" font-size="13" fill="var(--text-muted)">a front-end developer</text>
-<rect x="20" y="88" width="560" height="34" rx="2" fill="var(--bg-elevated)" stroke="var(--border)"/><rect x="20" y="88" width="3" height="34" fill="var(--accent)"/><text x="38" y="110" font-size="14" fill="var(--text)">LaTeX</text><text x="562" y="110" text-anchor="end" font-size="13" fill="var(--text-muted)">TeX Live, TeXstudio, a 300-page manual</text>
-<rect x="20" y="128" width="560" height="34" rx="2" fill="var(--bg-elevated)" stroke="var(--border)"/><rect x="20" y="128" width="3" height="34" fill="var(--accent)"/><text x="38" y="150" font-size="14" fill="var(--text)">SVG</text><text x="562" y="150" text-anchor="end" font-size="13" fill="var(--text-muted)">a designer and a licensed editor</text>
-<rect x="20" y="168" width="560" height="34" rx="2" fill="var(--bg-elevated)" stroke="var(--border)"/><rect x="20" y="168" width="3" height="34" fill="var(--accent)"/><text x="38" y="190" font-size="14" fill="var(--text)">Mermaid &amp; Graphviz</text><text x="562" y="190" text-anchor="end" font-size="13" fill="var(--text-muted)">a diagramming tool and its lock-in</text>
-</svg>
-<figcaption>Four formats, four gatekeepers. The formats haven&#8217;t changed. The gatekeepers are optional now.</figcaption>
-</figure>
+| The format | What used to guard it |
+| --- | --- |
+| HTML & CSS | a front-end developer |
+| LaTeX | TeX Live, TeXstudio, a 300-page manual |
+| SVG | a designer and a licensed editor |
+| Mermaid & Graphviz | a diagramming tool and its lock-in |
+
+The formats haven't changed. The gatekeepers are optional now.
 
 A few worth calling out:
 
@@ -108,9 +103,7 @@ What has been democratized is access to the good format. For decades, choosing t
 
 > The wall was never protecting anything valuable. It was just there.
 
-There is a real caveat. When someone produces a format they cannot read, they also cannot check it. A LaTeX document that compiles is not necessarily a document that says what you meant. An HTML report that renders is not necessarily accessible, or printable, or correct. Someone still has to know what good looks like. That job did not disappear, it moved from producing to judging.
-
-The bottleneck sits in a better place now.
+There is a real caveat. When someone produces a format they cannot read, they also cannot check it. A LaTeX document that compiles is not necessarily a document that says what you meant. An HTML report that renders is not necessarily accessible, or printable, or correct. Someone still has to know what good looks like. That job did not disappear, it moved from producing to judging, which is a better place for it to sit.
 
 ---
 
@@ -121,7 +114,6 @@ Three reports in one week, from three people who would have politely refused the
 ## References
 
 - [Digital Science: AI writing tools for 20 million Overleaf users](https://www.digital-science.com/blog/2025/06/digital-science-launches-new-cutting-edge-ai-writing-tools-for-20-million-overleaf-users/)
-- [GitHub Octoverse 2025](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/)
 - [Anthropic Economic Index](https://www.anthropic.com/research/economic-index-june-2026-report)
 - [Collins Word of the Year 2025](https://blog.collinsdictionary.com/language-lovers/collins-word-of-the-year-2025-ai-meets-authenticity-as-society-shifts/)
 - [MermaidSeqBench](https://arxiv.org/html/2511.14967v1)

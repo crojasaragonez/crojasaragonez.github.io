@@ -161,6 +161,39 @@ const formatter = new Intl.DateTimeFormat('en', {
     font-size: 0.9rem;
   }
 
+  /* Tables reflow with the prose instead of scrolling like the SVG figures */
+  .content :global(table) {
+    width: 100%;
+    margin: 2.5rem 0;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .content :global(th) {
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--border-strong);
+    color: var(--text);
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .content :global(td) {
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+    vertical-align: top;
+  }
+
+  .content :global(td:first-child) {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .content :global(tbody tr:last-child td) {
+    border-bottom: 0;
+  }
+
   .content :global(hr) {
     margin: 3rem 0;
     border: 0;
