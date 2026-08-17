@@ -1,22 +1,22 @@
 ---
 title: The Formats Nobody Was Supposed to Write
-description: "Three colleagues sent me reports in HTML last week, and none of them writes code. We also produce LaTeX-quality documents without ever opening a LaTeX editor. The formats that used to require a specialist are now just another thing you can ask for."
+description: "Three colleagues chose to send me HTML reports last week, though none of them writes code. Formats that once needed a specialist can now start with a clear request."
 pubDate: 2026-08-14
 ---
 
-Three different colleagues sent me reports in HTML last week. Not one of them thought it was a strange thing to be asked for.
+Three colleagues chose to send me HTML reports last week. Nobody asked them to use HTML.
 
-None of them writes code. None of them opened a text editor with syntax highlighting, and I doubt any of them could tell me what a closing tag is. They sent the file, I opened it in a browser, and it looked exactly like a report should look. The brand guidelines were followed to the letter. And each one read just as well on my phone as on my laptop, which is something the PDFs I normally receive have never managed.
+None of them writes code. None opened a programming editor, and I doubt they could explain a closing tag. They sent a file, I opened it in a browser, and it looked like a proper report. It followed the brand guidelines. It also worked as well on my phone as on my laptop.
 
-Before agents, that would have been unthinkable.
+Before AI agents, this would have been unusual.
 
 ## What "send it in HTML" used to mean
 
-Two years ago, asking a non-technical colleague for an HTML report was an act of hostility.
+Two years ago, a non-technical colleague choosing HTML for a report would have been unusual.
 
-It meant: go learn a markup language, learn enough CSS to make it not look like 1998, install something to write it in, then debug the gap between what you meant and what the browser decided to show you. Nobody does that for a Tuesday report. They send a Word document, or a PDF exported from a Word document, and you accept it.
+It meant learning HTML, a markup language, and enough CSS to make the page look right. It also meant installing an editor, writing the markup by hand, and fixing the difference between the intended result and what the browser showed. Nobody does all that for an ordinary report. They send a Word document or a PDF instead.
 
-The format was never the hard part. The syntax tax was.
+The format was not the hard part. The hard part was the syntax: the exact punctuation and rules needed to write it.
 
 <figure class="fig">
 <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="f1t f1d">
@@ -41,39 +41,39 @@ The format was never the hard part. The syntax tax was.
 <figcaption>Same format, same complexity. Far fewer steps to reach it.</figcaption>
 </figure>
 
-HTML is a good format for a report. One file, opens on any device without a license, prints to PDF, can hold a table that sorts itself or a chart that responds to a hover, and it will still open in forty years. The only reason it wasn't the default for internal documents is that writing it required a specialist.
+HTML is a useful report format. A single file opens on almost any device, can print to PDF, and can include interactive tables or charts. It is also likely to remain readable for a long time. It was not the usual choice for internal documents because writing it often needed a specialist.
 
-That reason is gone.
+That barrier is much lower now.
 
 ## Then the same thing happened with LaTeX
 
-The second half of this story surprised me more.
+LaTeX was an even bigger surprise.
 
-We have adopted LaTeX-style documents to produce perfectly typeset material: contracts, technical annexes, one-page summaries with real typography, mathematical notation that isn't a screenshot of an equation. Documents that look like they came out of a university press instead of a word processor.
+We now use LaTeX-style documents for well-formatted contracts, technical appendices, one-page summaries, and mathematical notation. They can look closer to a book or journal than a standard word-processor document.
 
-And nobody on the team has opened TeXstudio. Not once. No TeX Live install, no package manager, no fifteen-minute detour to find out which of four incompatible ways to place a figure is the one that works this decade.
+Nobody on the team has opened TeXstudio. There is no TeX Live installation, package manager, or long search for the right way to position an image.
 
 > LaTeX was never hard because of the typesetting. It was hard because of everything you had to survive before the typesetting started.
 
-For forty years, LaTeX was effectively reserved for scientific and academic professionals, and mostly for the subset of them stubborn enough to push through the toolchain. The output was always worth it. The entry cost meant almost nobody outside academia ever found out.
+For decades, LaTeX was mostly used in science and academia. Its output was strong, but getting started took time and patience. Many people outside those fields never tried it.
 
-Now the entry cost is a sentence.
+Now a clear sentence can be enough to get started.
 
 ## The evidence that this is happening everywhere
 
-I wanted to check whether this was just my own bubble. It isn't.
+I wanted to know if this was only happening around me. It is not.
 
-**Documents are now the main thing people build.** Anthropic's Economic Index found that documents and reports are the largest category of work output, at 20% of work conversations, ahead of code. The default output of these tools is a document, not a program.
+**Documents are a major use case.** Anthropic's Economic Index found that documents and reports were the largest category of work output in its data, at 20% of work conversations, ahead of code. Many people use these tools to make documents, not programs.
 
-**The LaTeX platforms are selling relief from LaTeX.** In June 2025, Overleaf shipped AI writing tools to its 20 million-plus users, promising they would "spend less time wrestling with LaTeX code." When the largest LaTeX platform in the world describes its own syntax as the obstacle, the argument is over. Typst, a newer alternative with much friendlier markup, is meanwhile moving from curiosity to something journals accept.
+**LaTeX tools are reducing the LaTeX burden.** In June 2025, Overleaf introduced AI writing tools for its more than 20 million users, aimed at reducing time spent working with LaTeX code. Typst, a newer system with simpler markup, is also gaining acceptance in some journals.
 
-**The language caught up too.** Collins named "vibe coding" its Word of the Year for 2025: describing what you want in plain language and letting the machine write the code. Dictionaries don't do that for niche practices.
+**The idea now has a common name.** Collins named “vibe coding” its Word of the Year for 2025: describing the result you want in plain language and letting a machine write the code.
 
-The number I keep coming back to is the first one. Documents outrank code, which means the people driving this are not developers.
+The first number matters most to me. If documents outrank code, many of the people using these tools are not developers.
 
 ## Other formats that fell over
 
-HTML and LaTeX are the two I noticed because they landed in my inbox. They are not the only ones.
+HTML and LaTeX are simply the two formats I saw first. They are not alone.
 
 | The format | What used to guard it |
 | --- | --- |
@@ -82,34 +82,34 @@ HTML and LaTeX are the two I noticed because they landed in my inbox. They are n
 | SVG | a designer and a licensed editor |
 | Mermaid & Graphviz | a diagramming tool and its lock-in |
 
-The formats haven't changed. The gatekeepers are optional now.
+The formats have not changed. The need for a specialist is no longer automatic.
 
 A few worth calling out:
 
-1. **SVG.** People are producing vector graphics good enough to publish, including the two figures in this post, without touching a drawing tool. A diagram becomes text you can edit, diff, and version.
-2. **Mermaid and Graphviz.** Diagrams-as-code went from a developer habit to a default output. There is now a published benchmark, MermaidSeqBench, built to measure how well models turn a description into a Mermaid sequence diagram. Nobody builds a benchmark for something nobody generates.
-3. **Markdown.** It became the native tongue of these tools, so millions of people are writing structured documents with real headings and hierarchy while thinking they are just typing.
-4. **Anything shaped like configuration.** YAML, JSON, TOML, iCal, GeoJSON, BibTeX. Formats where the concept is trivial and the punctuation is unforgiving, which is exactly the kind of problem a model handles well.
+1. **SVG.** People can create publishable vector graphics without using a drawing tool. The image is text, so it can be edited, compared, and tracked in version control.
+2. **Mermaid and Graphviz.** These tools turn text into diagrams. MermaidSeqBench, a published benchmark, measures how well models turn a written description into a Mermaid sequence diagram.
+3. **Markdown.** It is a simple way to add headings, lists, and structure to a document. Many people use it without thinking of it as a technical format.
+4. **Configuration formats.** YAML, JSON, TOML, iCal, GeoJSON, and BibTeX are easy in principle but strict about punctuation. That is a useful kind of task for a model.
 
-The formats that fell are the ones where the difficulty lived in the notation rather than in the thinking.
+These formats become easier when the difficulty is in notation, not in the underlying ideas.
 
 ## What is actually being democratized
 
-There is a version of this claim that is wrong, so let me be careful with it.
+There is an important limit to this idea.
 
-Nobody has been handed taste. The three reports I received last week were well formatted, and two of them were well argued, because the people who sent them are good at their jobs. The format came free. The thinking did not, and never will.
+These tools do not give people good judgment. The reports I received were clear because their authors understood their work. The format became easier; the thinking did not.
 
-What has been democratized is access to the good format. For decades, choosing the right container for your work was a privilege of people who had already paid a technical toll. If you were not a developer, your options were the ones with a toolbar. Everything with better output, better longevity or better precision sat behind a wall of syntax.
+What has changed is access to a good format. For decades, choosing the best container for your work often required technical training. If you were not a developer, you usually chose from the options in a toolbar. Formats with more control or longer life sat behind a wall of syntax.
 
 > The wall was never protecting anything valuable. It was just there.
 
-There is a real caveat. When someone produces a format they cannot read, they also cannot check it. A LaTeX document that compiles is not necessarily a document that says what you meant. An HTML report that renders is not necessarily accessible, or printable, or correct. Someone still has to know what good looks like. That job did not disappear, it moved from producing to judging, which is a better place for it to sit.
+There is one real risk. If someone creates a format they cannot read, they may not be able to check it. A LaTeX document that compiles may still say the wrong thing. An HTML report that renders may still be inaccessible, hard to print, or incorrect. Someone must still know what good looks like. The work has moved from producing the file to reviewing it.
 
 ---
 
-For forty years we told people that certain formats were not for them. We were describing a tooling problem, and they heard a statement about themselves.
+For decades, people were told that some formats were not for them. Often, the problem was the tools, not the people.
 
-Three reports in one week, from three people who would have politely refused the request a year ago. The format was the least interesting thing about any of them.
+Three reports in one week came from people who chose a format they may not have considered a year ago. The format was the least interesting part of each report.
 
 ## References
 
