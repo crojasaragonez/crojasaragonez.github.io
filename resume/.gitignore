@@ -1,0 +1,14 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+
+# Keep source, template class, and compiled résumé PDF tracked.
+!*.tex
+!*.cls
+!*.pdf

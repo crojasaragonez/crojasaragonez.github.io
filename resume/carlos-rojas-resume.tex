@@ -1,0 +1,148 @@
+% Carlos Luis Rojas Aragonés — AltaCV-based executive technology résumé
+% Compile with: xelatex carlos-rojas-resume.tex
+\documentclass[8pt,letterpaper,withhyper]{altacv}
+
+\geometry{left=1.25cm,right=1.25cm,top=1.0cm,bottom=1.0cm,columnsep=1.1cm}
+\usepackage{paracol}
+
+\iftutex
+  \setmainfont{DejaVu Sans}
+  \setsansfont{DejaVu Sans}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+\definecolor{Ink}{HTML}{172B4D}
+\definecolor{Teal}{HTML}{007C83}
+\definecolor{Mist}{HTML}{5E6C84}
+\colorlet{name}{Ink}
+\colorlet{tagline}{Teal}
+\colorlet{heading}{Ink}
+\colorlet{headingrule}{Teal}
+\colorlet{subheading}{Teal}
+\colorlet{accent}{Teal}
+\colorlet{emphasis}{Ink}
+\colorlet{body}{Mist}
+
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\Large\rmfamily\bfseries}
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+\AtBeginEnvironment{itemize}{\small}
+
+\begin{document}
+\name{Carlos Luis Rojas Aragonés}
+\tagline{Co-Founder \& Chief AI Officer | Technology \\ Organization Builder}
+\personalinfo{%
+  \location{San Carlos, Costa Rica}
+  \phone{+506 8925 7169}
+  \linkedin{crojasaragonez}
+  \github{crojasaragonez}
+  \homepage{crojasaragonez.github.io}
+}
+
+\makecvheader
+
+\cvsection{Executive Profile}
+Technology leader and startup builder with 18 years of experience leading large-scale software organizations and engineering teams across Latin America. Track record of scaling teams from zero to 100+ engineers, delivering mission-critical platforms for Fortune 500 companies, and aligning technology strategy with business growth. Expertise spans AWS cloud-native architecture, data and GenAI initiatives, scalable web platforms, hiring, organizational design, and distributed LATAM leadership.
+
+\cvsection{Professional Experience}
+\cvevent{Co-Founder \& Chief AI Officer}{SUBAXA}{Jan 2025 -- Present}{}
+\begin{itemize}
+\item Lead product and AI strategy for SUBAXA, an AI-native proptech company transforming how people invest in judicial real estate auctions in Costa Rica.
+\item Built the company around AI from day one, designing processes, decisions, and customer interactions with AI at their core rather than layering it onto an existing product.
+\end{itemize}
+
+\divider
+\cvevent{Co-Founder \& Board Member}{Golabs}{Aug 2026 -- Present}{LATAM}
+\begin{itemize}
+\item Provide strategic guidance on technology and innovation, with a primary focus on Artificial Intelligence, in partnership with the leadership team.
+\item Evaluate emerging technologies, shape the AI strategy, and advise on long-term technical initiatives that support sustainable growth and competitive advantage.
+\end{itemize}
+
+\divider
+\cvevent{Chief Technology Officer}{Golabs}{2019 -- Aug 2026}{LATAM}
+\begin{itemize}
+\item Created and led the AI division, achieving 30\% of total company revenue through AI services and solutions.
+\item Scaled the company from 0 to 100+ engineers across Latin America, supporting complex, high-impact projects for Fortune 500 clients.
+\item Partnered with executive leadership and clients to translate business objectives into technical roadmaps and execution plans.
+\item Built leadership layers of tech leads, managers, and directors to sustain growth beyond 100+ engineers.
+\item Designed distributed team structures across Costa Rica, Mexico, Nicaragua, Colombia, Guatemala, Argentina, the United States, and other LATAM countries.
+\item Led hiring, organizational design, and leadership development for high-performing multicultural engineering teams.
+\end{itemize}
+
+\divider
+\cvevent{Delivery Manager}{Golabs}{2014 -- 2019}{Costa Rica}
+\begin{itemize}
+\item Led end-to-end delivery for multiple client engagements and established repeatable processes across distributed teams.
+\item Standardized delivery practices across projects, increasing consistency and reducing onboarding time.
+\item Partnered with sales and pre-sales teams to estimate effort, define delivery approaches, and support successful deal closures.
+\item Mentored technical leads and senior engineers, strengthening delivery ownership and decision-making.
+\end{itemize}
+
+\divider
+\cvevent{Software Engineering Professor}{Universidad Técnica Nacional}{2014 -- 2022}{Costa Rica}
+\begin{itemize}
+\item Guided student teams from idea validation through MVP development and demo presentations.
+\item Built a hands-on learning environment through project-based coursework, hackathons, and real-client simulations.
+\item Created open educational resources, code samples, and technical workshops; integrated entrepreneurship and real-world product development into the curriculum.
+\end{itemize}
+
+\divider
+\cvevent{Software Engineer}{Avantica}{2011 -- 2014}{}
+\begin{itemize}
+\item Owned end-to-end feature development from design through deployment, consistently meeting or exceeding client expectations.
+\item Delivered production-quality features across multiple client engagements while adapting quickly to diverse technology stacks and processes.
+\end{itemize}
+
+\divider
+\cvevent{Software Developer}{NCQ Solution}{2010 -- 2011}{}
+\begin{itemize}
+\item Helped build the initial product from concept to first paying customers at an early-stage company.
+\item Designed and implemented core system architecture that scaled with company growth.
+\item Delivered early MVP features under tight timelines, enabling rapid market validation.
+\end{itemize}
+
+\cvsection{Leadership \& Impact}
+\cvachievement{\faCompass}{Strategy \& execution}{Defined technical strategy aligned with business growth and enterprise client needs.}
+\divider
+\cvachievement{\faUsers}{Engineering leadership}{Built and led large-scale, distributed engineering organizations across LATAM.}
+\divider
+\cvachievement{\faGlobeAmericas}{Global delivery}{Delivered software solutions for Fortune 500 companies using nearshore and distributed models.}
+\divider
+\cvachievement{\faSeedling}{Talent development}{Established hiring pipelines, career paths, and leadership structures for senior and junior engineers.}
+
+\cvsection{Core Expertise}
+\cvtag{Technology strategy}
+\cvtag{Engineering leadership}\\
+\cvtag{AWS cloud-native}
+\cvtag{Data \& GenAI}\\
+\cvtag{Scalable systems}
+\cvtag{Organizational design}\\
+\cvtag{Distributed delivery}
+\cvtag{Hiring \& development}
+
+\cvsection{Education}
+\cvevent{Executive Program: Chief Technology Officer}{Massachusetts Institute of Technology}{2026}{}
+\divider
+\cvevent{Machine Learning \& Data Science Program}{Texas Tech University}{2025}{}
+\divider
+\cvevent{Bachelor's Degree in Software Engineering}{Universidad Técnica Nacional}{2013}{}
+
+\cvsection{Languages}
+\textbf{Spanish:} Native \quad \textbf{English:} C1
+
+\cvsection{Community}
+\begin{itemize}
+\item \href{https://github.com/crojasaragonez/presentations}{Technical speaker}: delivered multiple technology talks and presentations.
+\item Open-source contributor to the Ruby ecosystem and other community-driven projects.
+\end{itemize}
+
+\cvsection{Interests}
+Open source, artificial intelligence, and entrepreneurship.
+
+\end{document}
