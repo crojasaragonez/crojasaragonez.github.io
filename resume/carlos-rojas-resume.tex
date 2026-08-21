@@ -44,6 +44,19 @@
   \github{crojasaragonez}
   \homepage{crojasaragonez.github.io}
 }
+% Raise the headshot above the first section rule for a cleaner header.
+\makeatletter
+\renewcommand{\@makeaphoto}[2]{%
+  \raisebox{-1.45cm}[0pt][0pt]{%
+    \begin{tikzpicture}[baseline=(current bounding box.south)]%
+      \clip (0,0) circle[radius=0.5#1];%
+      \node[inner sep=0pt] at (0,-0.4cm) {\includegraphics[width=#1]{#2}};%
+      \draw[Teal, line width=0.8pt] (0,0) circle[radius=0.5#1];%
+    \end{tikzpicture}%
+  }%
+}
+\makeatother
+\photoR{2.7cm}{carlos}
 
 \makecvheader
 
