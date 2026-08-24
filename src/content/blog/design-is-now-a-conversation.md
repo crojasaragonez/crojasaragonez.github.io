@@ -72,7 +72,7 @@ But for the many ideas that never got a first draft because a specialist was una
 
 ---
 
-The design team did not vanish. Its most expensive function—turning ambiguity into a first tangible version—just became available to far more people.
+The design team did not vanish. Its most expensive function **turning ambiguity into a first tangible version** just became available to far more people.
 
 ## References
 
