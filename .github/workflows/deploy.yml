@@ -26,17 +26,17 @@ jobs:
       id-token: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # Asserts Pages is enabled with the "GitHub Actions" source. Without this
       # the failure surfaces much later, as an opaque 404 from deploy-pages.
       - name: Configure Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
         with:
           enablement: true
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           # package.json requires >=22.12.0
           node-version: 22
@@ -48,10 +48,27 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      # upload-pages-artifact@v4 still embeds upload-artifact@v4 (Node 20).
+      # Package the Pages-compatible tarball here and upload it with v5, which
+      # runs on Node 24.
+      - name: Package Pages artifact
+        run: |
+          tar \
+            --dereference --hard-dereference \
+            --directory dist \
+            --exclude=.git \
+            --exclude=.github \
+            --exclude=".[^/]*" \
+            -cvf "$RUNNER_TEMP/artifact.tar" \
+            .
+
+      - name: Upload Pages artifact
+        uses: actions/upload-artifact@v5
         with:
-          path: dist
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
+          retention-days: 1
+          if-no-files-found: error
 
   deploy:
     needs: build
