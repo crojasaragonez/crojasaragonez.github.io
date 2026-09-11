@@ -1,0 +1,12 @@
+provider,model,intelligence_index,cost_per_task_usd,pareto_frontier,source,retrieved_at
+Anthropic,Claude Fable 5.1 (max with fallback),53.3737509623252,7.629706364004841,true,https://artificialanalysis.ai/models/,2026-09-10
+OpenAI,GPT-6 Astra (max),52.814069395513,3.2575003134834164,true,https://artificialanalysis.ai/models/,2026-09-10
+Anthropic,Claude Opus 5 (max),50.7001865797629,5.858396237036018,false,https://artificialanalysis.ai/models/,2026-09-10
+Meta,Muse Spark 1.3 (max),48.1690107719685,1.6048932100125866,true,https://artificialanalysis.ai/models/,2026-09-10
+Z AI,GLM-5.3 (max),44.855717385614,2.0056375150449584,false,https://artificialanalysis.ai/models/,2026-09-10
+xAI,Grok 4.6 (high),44.4050073012592,1.8589423352127492,false,https://artificialanalysis.ai/models/,2026-09-10
+Moonshot,Kimi K3 (max),43.7841729518782,2.0001323004425493,false,https://artificialanalysis.ai/models/,2026-09-10
+Google,Gemini 3.8 Flash (high),41.1863571765904,1.2427947606950427,true,https://artificialanalysis.ai/models/,2026-09-10
+DeepSeek,DeepSeek V4.1 Flash (max),39.545442472527,0.26522527009606844,true,https://artificialanalysis.ai/models/,2026-09-10
+OpenAI,GPT-5.6 Luna (max),37.5048489690841,0.17829726152289094,true,https://artificialanalysis.ai/models/,2026-09-10
+DeepSeek,DeepSeek V4 Pro 0813 (max),36.2828791278402,0.6740219040435134,false,https://artificialanalysis.ai/models/,2026-09-10
