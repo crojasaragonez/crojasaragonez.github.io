@@ -244,4 +244,100 @@ const formatter = new Intl.DateTimeFormat('en', {
   .content :global(a) {
     color: var(--accent);
   }
+
+  /* Research-note elements for methodology-heavy articles */
+  .content :global(.paper-kicker) {
+    margin: 0 0 1.25rem;
+    color: var(--accent-soft);
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 650;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .content :global(.paper-abstract) {
+    margin: 0 0 3rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-strong);
+    border-left: 3px solid var(--accent);
+    background: var(--bg-elevated);
+  }
+
+  .content :global(.paper-abstract p) {
+    margin: 0;
+    color: var(--text);
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .content :global(.paper-abstract .paper-label) {
+    margin-bottom: 0.65rem;
+    color: var(--accent-soft);
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .content :global(.equation) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    background: rgba(21, 27, 45, 0.45);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(1.1rem, 3vw, 1.45rem);
+  }
+
+  .content :global(.equation-name) {
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  .content :global(.equation-symbol) {
+    color: var(--text-muted);
+  }
+
+  .content :global(.equation-fraction) {
+    display: inline-grid;
+    grid-template-rows: auto auto;
+    min-width: 10rem;
+    text-align: center;
+  }
+
+  .content :global(.equation-fraction span:first-child) {
+    padding: 0 0.8rem 0.35rem;
+    border-bottom: 1px solid currentColor;
+  }
+
+  .content :global(.equation-fraction span:last-child) {
+    padding-top: 0.35rem;
+  }
+
+  .content :global(.equation-compact) {
+    justify-content: flex-start;
+    font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+    white-space: nowrap;
+  }
+
+  .content :global(.data-figure svg) {
+    background-image: linear-gradient(rgba(148, 163, 184, 0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.055) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .content :global(.paper-status) {
+    margin-top: 3rem;
+    padding: 1rem 1.2rem;
+    border: 1px dashed var(--border-strong);
+    color: var(--text-muted);
+    font-size: 0.92rem;
+  }
 </style>

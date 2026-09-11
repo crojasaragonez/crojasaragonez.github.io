@@ -1,0 +1,10 @@
+benchmark,threshold_model,threshold_score,model,release_date,usd_per_1m_tokens,source
+GPQA Diamond,GPT-4-0314,33,GPT-4-0314,2023-03-14,37.5,https://epoch.ai/data/charts/llm-inference-price-trends/lowest_price_models_data.csv
+GPQA Diamond,GPT-4-0314,33,Mistral-Large-2024-02,2024-02-26,6.0,https://epoch.ai/data/charts/llm-inference-price-trends/lowest_price_models_data.csv
+GPQA Diamond,GPT-4-0314,33,Claude-3-Haiku,2024-03-04,0.5,https://epoch.ai/data/charts/llm-inference-price-trends/lowest_price_models_data.csv
+GPQA Diamond,GPT-4-0314,33,Gemini-1.5-Flash-2024-05,2024-05-10,0.13,https://epoch.ai/data/charts/llm-inference-price-trends/lowest_price_models_data.csv
+GPQA Diamond,GPT-4-0314,33,Phi 4,2024-12-13,0.1225,https://epoch.ai/data/charts/llm-inference-price-trends/lowest_price_models_data.csv
+GPQA Diamond,Claude-3.5-Sonnet-2024-06,56,Claude-3.5-Sonnet-2024-06,2024-06-20,6.0,https://epoch.ai/data/charts/llm-inference-price-trends/lowest_price_models_data.csv
+GPQA Diamond,Claude-3.5-Sonnet-2024-06,56,Gemini-1.5-Pro-2024-09,2024-09-24,2.19,https://epoch.ai/data/charts/llm-inference-price-trends/lowest_price_models_data.csv
+GPQA Diamond,Claude-3.5-Sonnet-2024-06,56,DeepSeek-V3,2024-12-26,0.4775,https://epoch.ai/data/charts/llm-inference-price-trends/lowest_price_models_data.csv
+GPQA Diamond,Claude-3.5-Sonnet-2024-06,56,Gemini 2.0 Flash,2025-02-05,0.175,https://epoch.ai/data/charts/llm-inference-price-trends/lowest_price_models_data.csv
