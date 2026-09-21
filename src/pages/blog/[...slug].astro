@@ -3,7 +3,7 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const posts = await getCollection('blog', ({ data }) => !data.draft || import.meta.env.DEV);
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
@@ -159,6 +159,11 @@ const formatter = new Intl.DateTimeFormat('en', {
     margin-top: 0.85rem;
     color: var(--text-muted);
     font-size: 0.9rem;
+  }
+
+  .content :global(.silicon-figure img) {
+    min-width: 36rem;
+    margin: 0;
   }
 
   /* Tables reflow with the prose instead of scrolling like the SVG figures */

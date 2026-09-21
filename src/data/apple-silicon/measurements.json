@@ -1,0 +1,29 @@
+{
+  "retrieved": "2026-09-21",
+  "evolution": {
+    "source": "https://www.computerbase.de/artikel/prozessoren/apple-m6-m5-m4-m3-m2-m1-benchmarks.99501/",
+    "benchmark": "Cinebench 2026.1",
+    "method": "Published community aggregates, base chips only. Configurations and cooling vary; whiskers are observed min/max, not confidence intervals. One M6 observation.",
+    "rows": [
+      {"chip":"M1","year":2020,"cores":8,"single":428,"single_min":421,"single_max":437,"single_n":3,"multi":1816,"multi_min":1708,"multi_max":1884,"multi_n":3},
+      {"chip":"M2","year":2022,"cores":8,"single":461,"single_min":457,"single_max":464,"single_n":2,"multi":2183,"multi_min":2085,"multi_max":2280,"multi_n":2},
+      {"chip":"M3","year":2023,"cores":8,"single":545,"single_min":535,"single_max":554,"single_n":3,"multi":2558,"multi_min":2163,"multi_max":2877,"multi_n":3},
+      {"chip":"M4","year":2024,"cores":10,"single":644,"single_min":632,"single_max":653,"single_n":7,"multi":3600,"multi_min":3020,"multi_max":3864,"multi_n":8},
+      {"chip":"M5","year":2025,"cores":10,"single":733,"single_min":731,"single_max":734,"single_n":3,"multi":3957,"multi_min":3453,"multi_max":4461,"multi_n":4},
+      {"chip":"M6","year":2026,"cores":12,"single":823,"single_min":823,"single_max":823,"single_n":1,"multi":5674,"multi_min":5674,"multi_max":5674,"multi_n":1}
+    ]
+  },
+  "comparison": {
+    "source": "https://www.notebookcheck.net/Apple-M6-SoC-Analysis-Apple-s-2-nm-chip-crushes-AMD-Intel-Qualcomm.1404057.0.html",
+    "benchmark": "Cinebench 2024",
+    "method": "Selected systems from the same review. Efficiency uses whole-system power with external display setup, not CPU package estimates. Do not compare points with Cinebench 2026.1.",
+    "rows": [
+      {"chip":"Apple M6","device":"Mac mini (24 GB / 512 GB)","single":221,"multi_points_per_watt":32.5},
+      {"chip":"Apple M5","device":"MacBook Pro 14 (2025)","single":200,"multi_points_per_watt":27.5},
+      {"chip":"Snapdragon X2 Elite Extreme X2E-94-100","device":"Asus Zenbook A16 UX3607","single":151,"multi_points_per_watt":22.2},
+      {"chip":"Intel Core Ultra X7 358H","device":"Minisforum M2 Pro","single":123,"multi_points_per_watt":17.8},
+      {"chip":"AMD Ryzen AI 9 HX 470","device":"Minisforum AI X1 Pro","single":119,"multi_points_per_watt":13.4},
+      {"chip":"Apple M4 (10-core)","device":"MacBook Air 13 M4 Entry","single":173,"multi_points_per_watt":39.0}
+    ]
+  }
+}
