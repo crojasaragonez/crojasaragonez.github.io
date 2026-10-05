@@ -35,6 +35,9 @@ const personSchema = {
     addressCountry: 'CR',
   },
   sameAs: [site.socials.linkedin, site.socials.github],
+  award: site.awards.map((award) =>
+    `${award.name} — ${award.category}, ${award.issuer} (${award.year})`,
+  ),
   worksFor: site.ventures.map((venture) => ({
     '@type': 'Organization',
     name: venture.name,

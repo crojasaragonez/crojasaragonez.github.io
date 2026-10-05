@@ -1,0 +1,70 @@
+---
+import { site } from '../data/site';
+---
+
+<section class="section" id="recognition" aria-labelledby="recognition-title">
+  <div class="container reveal">
+    <p class="section-label">Recognition</p>
+    <h2 class="section-title" id="recognition-title">Entrepreneurship & innovation</h2>
+    {
+      site.awards.map((award) => (
+        <article class="award">
+          <div class="award-meta">
+            <span>{award.issuer} · Costa Rica</span>
+            <time datetime={award.date}>{award.displayDate}</time>
+          </div>
+          <h3 lang="es">{award.name}</h3>
+          <p class="award-category">{award.category}</p>
+          <p class="award-summary">{award.summary}</p>
+          <ul class="sources" aria-label="Award coverage">
+            {award.sources.map((source) => (
+              <li>
+                <a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a>
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .award {
+    margin-top: 2rem;
+    padding: 1.5rem 0;
+    border-block: 1px solid var(--border);
+  }
+
+  .award-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  .award h3 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+  }
+
+  .award-category {
+    color: var(--secondary);
+    font-weight: 500;
+  }
+
+  .award-summary {
+    max-width: 46rem;
+  }
+
+  .sources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    list-style: none;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    font-size: 0.9rem;
+  }
+</style>

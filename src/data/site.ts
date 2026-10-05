@@ -30,6 +30,28 @@ export const site = {
       'I care about talent systems, clear technical strategy, and execution that founders and enterprise leaders can trust. I also teach, speak, and contribute to the open-source community when it sharpens the craft.',
     ],
   },
+  awards: [
+    {
+      name: 'Galardón Alumni con Sello UTN',
+      category: 'Entrepreneurship & Innovation',
+      issuer: 'Universidad Técnica Nacional',
+      year: '2019',
+      date: '2019-10-16',
+      displayDate: 'October 16, 2019',
+      summary:
+        'In 2019, Universidad Técnica Nacional recognized me with its Alumni distinction in Entrepreneurship and Innovation. I received the award as a Software Engineering graduate of the San Carlos campus, during the university’s inaugural Alumni awards ceremony.',
+      sources: [
+        {
+          label: 'UTN official announcement · October 18, 2019',
+          url: 'https://utn.ac.cr/content/utn-realizo-acto-entrega-galardon-alumni-sello-utn',
+        },
+        {
+          label: 'Acción U · Issue 23, 2019 · page 6 (PDF)',
+          url: 'https://www.utn.ac.cr/sites/default/files/attachments/7-N23-octubre-noviembre-diciembre-2019.pdf#page=6',
+        },
+      ],
+    },
+  ],
   ventures: [
     {
       slug: 'golabs',
