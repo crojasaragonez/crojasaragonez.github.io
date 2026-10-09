@@ -1,0 +1,13 @@
+{
+  "note": "Homicide totals the OIJ announced publicly, used to check the open dataset. Not plotted. Later revisions can differ by a few cases.",
+  "rows": [
+    {"year": 2019, "homicides": 564, "source": "https://pjenlinea3.poder-judicial.go.cr/biblioteca/uploads/Archivos/Articulo/Evolucion%20de%20los%20homicidios%20en%20Costa%20Rica%20en%20los%20ultimos.pdf"},
+    {"year": 2020, "homicides": 570, "source": "https://pjenlinea3.poder-judicial.go.cr/biblioteca/uploads/Archivos/Articulo/Evolucion%20de%20los%20homicidios%20en%20Costa%20Rica%20en%20los%20ultimos.pdf"},
+    {"year": 2021, "homicides": 588, "source": "https://pjenlinea3.poder-judicial.go.cr/biblioteca/uploads/Archivos/Articulo/Evolucion%20de%20los%20homicidios%20en%20Costa%20Rica%20en%20los%20ultimos.pdf", "derivation": "656 in 2022 is described as an increase of 11.56% (68) over 2021"},
+    {"year": 2022, "homicides": 656, "source": "https://pjenlinea3.poder-judicial.go.cr/biblioteca/uploads/Archivos/Articulo/Evolucion%20de%20los%20homicidios%20en%20Costa%20Rica%20en%20los%20ultimos.pdf", "rate_per_100k": 12.6},
+    {"year": 2023, "homicides": 905, "source": "https://delfino.cr/2026/01/costa-rica-registro-873-homicidios-en-2025-el-tercer-ano-mas-violento-de-la-historia", "note": "907 at year end (EFE, swissinfo, 2024-01-02); 905 after revision"},
+    {"year": 2024, "homicides": 876, "source": "https://delfino.cr/2026/01/costa-rica-registro-873-homicidios-en-2025-el-tercer-ano-mas-violento-de-la-historia"},
+    {"year": 2025, "homicides": 873, "source": "https://delfino.cr/2026/01/costa-rica-registro-873-homicidios-en-2025-el-tercer-ano-mas-violento-de-la-historia", "rate_per_100k": 16.7,
+     "by_province": {"SAN JOSE": 293, "LIMON": 172, "PUNTARENAS": 130, "ALAJUELA": 102, "GUANACASTE": 79, "CARTAGO": 62, "HEREDIA": 35}}
+  ]
+}
