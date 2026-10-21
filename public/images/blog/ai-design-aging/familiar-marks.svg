@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="600" viewBox="0 0 640 600" role="img" aria-labelledby="title desc">
+  <title id="title">Different marks, familiar families</title>
+  <desc id="desc">Six fictional marks in three pairs: sparkles, loops, and gradient orbs. The small differences within each pair leave the underlying visual idea similar.</desc>
+  <defs>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#9fa9ff"/><stop offset=".5" stop-color="#bb83f5"/><stop offset="1" stop-color="#69d5ea"/>
+    </linearGradient>
+    <radialGradient id="orb" cx=".32" cy=".24" r=".85">
+      <stop stop-color="#e7e7ff"/><stop offset=".3" stop-color="#a88bfa"/><stop offset=".68" stop-color="#627ed7"/><stop offset="1" stop-color="#263c78"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx=".68" cy=".28" r=".85">
+      <stop stop-color="#d9fcff"/><stop offset=".28" stop-color="#73bfeb"/><stop offset=".65" stop-color="#9c78e6"/><stop offset="1" stop-color="#393070"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="600" fill="#101726"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="28" y="38" fill="#b5c2d8" font-size="12" letter-spacing="2">VISUAL PATTERN STUDIES / 01</text>
+    <text x="28" y="75" fill="#f0f4fa" font-size="27" font-weight="700">Different marks. Familiar families.</text>
+    <g fill="#172134" stroke="#304057">
+      <rect x="28" y="102" width="282" height="130" rx="8"/>
+      <rect x="330" y="102" width="282" height="130" rx="8"/>
+      <rect x="28" y="246" width="282" height="130" rx="8"/>
+      <rect x="330" y="246" width="282" height="130" rx="8"/>
+      <rect x="28" y="390" width="282" height="130" rx="8"/>
+      <rect x="330" y="390" width="282" height="130" rx="8"/>
+    </g>
+    <g fill="url(#ink)">
+      <path d="M169 119 Q173 158 208 161 Q173 165 169 204 Q165 165 130 161 Q165 158 169 119Z"/>
+      <path d="M463 125 Q469 155 499 161 Q469 167 463 197 Q457 167 427 161 Q457 155 463 125Z"/>
+      <path d="M500 119 Q502 130 513 132 Q502 134 500 145 Q498 134 487 132 Q498 130 500 119Z"/>
+    </g>
+    <g fill="none" stroke="url(#ink)" stroke-width="12" stroke-linecap="round">
+      <ellipse cx="154" cy="301" rx="30" ry="24" transform="rotate(-38 154 301)"/>
+      <ellipse cx="187" cy="301" rx="30" ry="24" transform="rotate(-38 187 301)"/>
+      <path d="M470 321 C415 334 424 267 458 278 C481 285 463 322 489 324 C521 328 523 271 489 279 C467 284 477 316 450 321"/>
+    </g>
+    <circle cx="169" cy="444" r="36" fill="url(#orb)"/>
+    <circle cx="471" cy="444" r="36" fill="url(#orb2)"/>
+    <g fill="#c3cfe0" font-size="15" text-anchor="middle">
+      <text x="169" y="219">Sparkle / single</text><text x="471" y="219">Sparkle / cluster</text>
+      <text x="169" y="363">Loop / linked</text><text x="471" y="363">Loop / continuous</text>
+      <text x="169" y="507">Orb / violet</text><text x="471" y="507">Orb / blue</text>
+    </g>
+    <text x="28" y="553" fill="#f0f4fa" font-size="17">A variation in finish is not always a different idea.</text>
+    <text x="28" y="580" fill="#9cacc4" font-size="13">Fictional illustrations · Not model outputs or a market survey</text>
+  </g>
+</svg>
