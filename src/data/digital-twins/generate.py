@@ -108,6 +108,73 @@ def histogram(a, b):
 </svg>''', stats
 
 
+# Illustrative cash distribution for ONE property sale (not Subaxa figures).
+SALE = 150_000
+COSTS = [("Auction price", 90_000), ("Legal and court costs", 6_000),
+         ("Repairs and preparation", 10_000), ("Holding costs", 6_000),
+         ("Closing costs and taxes", 7_500)]
+
+
+def sankey():
+    cost_total = sum(v for _, v in COSTS)
+    profit = SALE - cost_total
+    split = [("Investors (80%)", round(profit * 0.8)), ("Fund manager (20%)", round(profit * 0.2))]
+    W, H, TOP, K, GAP3 = 700, 480, 78, 300 / SALE, 12
+    X1, X2, X3, NW = 40, 270, 470, 14
+    COST, PROF = "#fb7185", "#34d399"
+    leaves = [(n, v, COST) for n, v in COSTS] + [(n, v, PROF) for n, v in split]
+    col3_h = SALE * K + GAP3 * (len(leaves) - 1)
+    y3, ys = TOP, []
+    for _, v, _ in leaves:
+        ys.append(y3); y3 += v * K + GAP3
+    mid = TOP + col3_h / 2
+    gap2 = 44
+    y2c = mid - (SALE * K + gap2) / 2
+    y2p = y2c + cost_total * K + gap2
+    y1 = mid - SALE * K / 2
+
+    def ribbon(xa, ya, xb, yb, h, color):
+        cx = (xa + xb) / 2
+        return (f'<path d="M{xa:.1f} {ya:.1f} C{cx:.1f} {ya:.1f} {cx:.1f} {yb:.1f} {xb:.1f} {yb:.1f} '
+                f'L{xb:.1f} {yb+h:.1f} C{cx:.1f} {yb+h:.1f} {cx:.1f} {ya+h:.1f} {xa:.1f} {ya+h:.1f} Z" '
+                f'fill="{color}" fill-opacity="0.32"/>')
+
+    out = []
+    # column 1 -> 2
+    out.append(ribbon(X1 + NW, y1, X2, y2c, cost_total * K, COST))
+    out.append(ribbon(X1 + NW, y1 + cost_total * K, X2, y2p, profit * K, PROF))
+    # column 2 -> 3
+    off = {COST: y2c, PROF: y2p}
+    for (n, v, c), y in zip(leaves, ys):
+        out.append(ribbon(X2 + NW, off[c], X3, y, v * K, c))
+        off[c] += v * K
+    # nodes
+    out.append(f'<rect x="{X1}" y="{y1:.1f}" width="{NW}" height="{SALE*K:.1f}" fill="var(--accent)"/>')
+    out.append(f'<rect x="{X2}" y="{y2c:.1f}" width="{NW}" height="{cost_total*K:.1f}" fill="{COST}"/>')
+    out.append(f'<rect x="{X2}" y="{y2p:.1f}" width="{NW}" height="{profit*K:.1f}" fill="{PROF}"/>')
+    for (n, v, c), y in zip(leaves, ys):
+        out.append(f'<rect x="{X3}" y="{y:.1f}" width="{NW}" height="{v*K:.1f}" fill="{c}"/>')
+        cy = y + v * K / 2 + 4
+        out.append(f'<text x="{X3+NW+10}" y="{cy:.1f}" font-size="12" fill="var(--text)">{n} '
+                   f'<tspan font-weight="600" fill="var(--text-muted)">${v:,}</tspan></text>')
+    lab = lambda x, y, a, b: (f'<text x="{x}" y="{y:.1f}" font-size="12.5" font-weight="600" fill="var(--text)">{a}</text>'
+                              f'<text x="{x}" y="{y+16:.1f}" font-size="12" fill="var(--text-muted)">{b}</text>')
+    out.append(lab(X1, y1 - 26, "Sale price", f"${SALE:,}"))
+    out.append(lab(X2, y2c - 26, "Costs recovered", f"${cost_total:,}"))
+    out.append(lab(X2, y2p + profit * K + 18, "Net profit", f"${profit:,}"))
+    desc = (f"Illustrative example, not Subaxa figures. A property sold for ${SALE:,}. "
+            + "; ".join(f"{n}: ${v:,}" for n, v in COSTS)
+            + f". Costs total ${cost_total:,}, leaving a net profit of ${profit:,}, split "
+            + " and ".join(f"{n} ${v:,}" for n, v in split) + ".")
+    svg = f"""<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dt5t dt5d">
+<title id="dt5t">Where the money from one property sale goes</title>
+<desc id="dt5d">{desc}</desc>
+<text x="{W/2}" y="30" text-anchor="middle" font-size="16" font-weight="600" fill="var(--text)">Where the money from one property sale goes</text>
+{"".join(out)}
+</svg>"""
+    return svg, cost_total, profit, split
+
+
 if __name__ == "__main__":
     a = simulate(6)
     b = simulate(24)
@@ -115,6 +182,9 @@ if __name__ == "__main__":
     (OUT / "fan.svg.html").write_text(svg)
     svg, stats = histogram(a[:, -1] / 100, b[:, -1] / 100)
     (OUT / "paths.svg.html").write_text(svg)
+    svg, ct, pr, sp = sankey()
+    (OUT / "sankey.svg.html").write_text(svg)
+    print("sankey:", ct, pr, sp)
     print("fan end percentiles (Path A):", {k: round(float(v), 1) for k, v in end.items()})
     print({k: round(float(v), 3) for k, v in stats.items()})
     med_month = lambda v: int(np.argmax(np.median(v, axis=0) >= 100 * 1.0 + 0.01))

@@ -1,6 +1,6 @@
 # Digital twins: illustrative toy model
 
-Supports `digital-twins-for-private-investment-funds.md`. Figures 3 and 4 come
+Supports `digital-twins-for-private-investment-funds.md`. Figures 2, 4 and 5 come
 from `generate.py`, a deliberately simple toy model written for the article.
 It does not use Subaxa data, parameters, or methods.
 
@@ -12,5 +12,8 @@ complications: multiple x0.55 and 8 extra months. Properties are independent
 (no shared market shocks). Unsold properties are held at cost. 2,000 runs per
 path, seed 2026, 48-month horizon.
 
-`python3 generate.py` writes `fan.svg.html` and `paths.svg.html`; their SVG
-is pasted inline into the post (replace the matching `<svg>` blocks). Figures 1 and 2 are hand-written diagrams.
+Figure 2 is a single hypothetical sale (`SALE`, `COSTS` and an 80/20
+profit split), not a simulation.
+
+`python3 generate.py` writes `sankey.svg.html`, `fan.svg.html` and `paths.svg.html`; their SVG
+is pasted inline into the post (replace the matching `<svg>` blocks). Figures 1 and 3 are hand-written diagrams.
