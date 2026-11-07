@@ -160,7 +160,7 @@ def sankey():
     lab = lambda x, y, a, b: (f'<text x="{x}" y="{y:.1f}" font-size="12.5" font-weight="600" fill="var(--text)">{a}</text>'
                               f'<text x="{x}" y="{y+16:.1f}" font-size="12" fill="var(--text-muted)">{b}</text>')
     out.append(lab(X1, y1 - 26, "Sale price", f"${SALE:,}"))
-    out.append(lab(X2, y2c - 26, "Costs recovered", f"${cost_total:,}"))
+    out.append(lab(X2, y2c - 26, "Costs", f"${cost_total:,}"))
     out.append(lab(X2, y2p + profit * K + 18, "Net profit", f"${profit:,}"))
     desc = (f"Illustrative example, not Subaxa figures. A property sold for ${SALE:,}. "
             + "; ".join(f"{n}: ${v:,}" for n, v in COSTS)
