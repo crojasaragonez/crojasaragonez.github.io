@@ -1,0 +1,139 @@
+{
+  "run_utc": "2026-11-11T18:00:15Z",
+  "python": "3.11.15",
+  "platform": "Linux-7.3.3-1-default-x86_64-with-glibc2.44",
+  "cpu": "AMD Ryzen AI 7 PRO 350 w/ Radeon 860M",
+  "versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.5.2",
+    "faiss-cpu": "1.15.1"
+  },
+  "threadpools": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libscipy_openblas",
+      "filepath": "/home/carlos/.pyenv/versions/3.11.15/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+      "version": "0.3.31.188.0",
+      "threading_layer": "pthreads",
+      "architecture": "SkylakeX"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libgomp",
+      "filepath": "/tmp/e-means-venv/lib/python3.11/site-packages/faiss_cpu.libs/libgomp-e985bcbb.so.1.0.0",
+      "version": null
+    },
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libopenblas",
+      "filepath": "/tmp/e-means-venv/lib/python3.11/site-packages/faiss_cpu.libs/libopenblaso-r0-d77a1985.3.15.so",
+      "version": "0.3.15",
+      "threading_layer": "openmp",
+      "architecture": "Barcelona"
+    },
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libscipy_openblas",
+      "filepath": "/home/carlos/.pyenv/versions/3.11.15/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+      "version": "0.3.30",
+      "threading_layer": "pthreads",
+      "architecture": "SkylakeX"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libgomp",
+      "filepath": "/home/carlos/.pyenv/versions/3.11.15/lib/python3.11/site-packages/scikit_learn.libs/libgomp-a34b3233.so.1.0.0",
+      "version": null
+    }
+  ],
+  "faiss_threads": 1,
+  "source_commit": "f777f7d82d30a444febaa29654296738d85b3f7a",
+  "source_sha256": {
+    "__init__.py": "ad196786de8eb8ab7a229908b86ad8548a72459ade95e9e9c3275943dd50bb78",
+    "base.py": "bcffd7829ebfc25e1354308770b49e6f99d8566ba5e474a41a22e9ec414b17cd",
+    "e_means.py": "b1710504fdbef21efdd33d8489a56f8e7fc6056182afbed3f355985302c2e77c"
+  },
+  "data_url": "https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz",
+  "data_sha256": "731c5ac602752760c8e48fbffcf8c3b850d9dc2a2aedcf2cc48468fc17b673d1",
+  "train_shape": [
+    60000,
+    784
+  ],
+  "test_shape": [
+    10000,
+    784
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "clusters": [
+    10,
+    100
+  ],
+  "arms": [
+    [
+      "e-means",
+      1
+    ],
+    [
+      "e-means",
+      2.5
+    ],
+    [
+      "e-means",
+      5
+    ],
+    [
+      "e-means",
+      10
+    ],
+    [
+      "e-means",
+      25
+    ],
+    [
+      "Lloyd (Faiss)",
+      1
+    ],
+    [
+      "Lloyd (Faiss)",
+      3
+    ],
+    [
+      "Lloyd (Faiss)",
+      5
+    ],
+    [
+      "Lloyd (Faiss)",
+      10
+    ],
+    [
+      "Lloyd (Faiss)",
+      25
+    ],
+    [
+      "MiniBatch (sklearn)",
+      5
+    ],
+    [
+      "k-means++ (sklearn)",
+      25
+    ]
+  ],
+  "smoke": false
+}
