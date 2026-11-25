@@ -2,7 +2,7 @@
 title: "Open Source Matters More When Software Moves This Fast"
 description: "Recent Linux kernel releases, hundreds of Firefox security fixes, and downloadable AI models show what happens when more people can improve the software they depend on."
 pubDate: 2026-11-24T12:00:00Z
-draft: true
+draft: false
 ---
 
 On October 18, 2026, Linux 7.3 shipped after a nine-week development cycle. In that time, a record 3,021 developers contributed 18,765 non-merge commits. Of those developers, 807 had never contributed to the kernel before. [LWN’s Linux 7.3 development statistics](https://lwn.net/Articles/1100241/)
